@@ -1,0 +1,1 @@
+call compile preprocessFileLineNumbers "Client\EventHandlers\HandleDamage.sqx.sqf";

@@ -1,0 +1,11 @@
+call compile preprocessFileLineNumbers "Server\Classes\MissionEngine.sqx";
+
+using TrainingForrestPatrol.Server;
+
+private ["_missionEngine" as MissionEngine];
+
+_missionEngine = new MissionEngine;
+
+sleep 2;
+
+call _missionEngine.Start;
