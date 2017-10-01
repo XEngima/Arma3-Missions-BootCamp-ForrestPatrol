@@ -10,7 +10,7 @@
  
 using Sqx.Markers;
  
-namespace TrainingForrestPatrol.Server
+namespace BootCampForrestPatrol.Server
 {
 	public class MissionEngine
 	{
@@ -24,29 +24,20 @@ namespace TrainingForrestPatrol.Server
 		public method Start {
 			waitUntil { count allPlayers > 0 };
 			
-			player sideChat "Mission engine has started.";
-			
 			//_mStartPos = getPos (allPlayers select 0); TODO: Kompilerar fel - ett semikolon för mycket!
 			private _firstPlayer = (allPlayers select 0);
 			_mStartPos = getPos _firstPlayer;
 			
-			waitUntil { { _mStartPos distance _x > 50 } count allPlayers == count allPlayers };
+			waitUntil { { _mStartPos distance _x > 75 } count allPlayers > 0 };
 			
-			player sideChat "Players are on the move!";
+			["Mission has started. Enemy patrol is on the move!"] call dre_fnc_CL_ShowTitleTextAllClients;
 			
 			waitUntil { !isNil "eng_enemyLeader" };
 			
-			player sideChat "Got enemy leader!";
-			
-			waitUntil { sleep 10; { eng_enemyLeader distance _x < 400 } count allPlayers > 0 };
-			
-			player sideChat "Enemies are close!";
+			waitUntil { sleep (random 60); { eng_enemyLeader distance _x < 400 } count allPlayers > 0 };
 			
 			[getPos eng_enemyLeader, "o_inf", "ColorOpfor"] call Marker.CreateIconMarker as Marker;
-			hint ("Enemy patrol sighted in direction " + str (round ((leader group player) getDir getPos eng_enemyLeader)) + ". Moving in direction " + str (round getDir eng_enemyLeader) + ".");
-			
-			//waitUntil { !isNil "eng_playersDetected" };
+			["Enemy patrol sighted in direction " + str (round ((leader group player) getDir getPos eng_enemyLeader)) + ". Moving in direction " + str (round getDir eng_enemyLeader) + "."] call dre_fnc_CL_ShowTitleTextAllClients;
 		};
 	};
 };
-

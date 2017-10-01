@@ -1,8 +1,7 @@
 if (isServer) then {
-	call compile preprocessFileLineNumbers "Server\InitServer.sqx";
+	execVM "Server\InitServer.sqx";
 };
 
 if (!isDedicated) then {
-	waitUntil { player == player };
-	call compile preprocessFileLineNumbers "Client\InitClient.sqx";
+	execVM "Client\InitClient.sqx";
 };
