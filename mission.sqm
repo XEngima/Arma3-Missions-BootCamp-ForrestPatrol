@@ -8,11 +8,11 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=25;
+		nextID=27;
 	};
 	class MarkerIDProvider
 	{
-		nextID=3;
+		nextID=4;
 	};
 	class Camera
 	{
@@ -84,7 +84,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=7;
+		items=9;
 		class Item0
 		{
 			dataType="Marker";
@@ -540,6 +540,29 @@ class Mission
 			name="marker_2";
 			type="mil_start";
 			id=24;
+		};
+		class Item7
+		{
+			dataType="Trigger";
+			position[]={13816.006,52.488602,22101.51};
+			class Attributes
+			{
+				onActivation="_nil = (createGroup west) createUnit [""B_Soldier_F"", getMarkerPos ""themarker"", [], 0, ""FORM""];";
+				sizeA=0;
+				sizeB=0;
+				activationBy="ALPHA";
+			};
+			id=25;
+			type="EmptyDetector";
+		};
+		class Item8
+		{
+			dataType="Marker";
+			position[]={13796.994,0,22106.75};
+			name="themarker";
+			type="Empty";
+			id=26;
+			atlOffset=-51.300018;
 		};
 	};
 };
