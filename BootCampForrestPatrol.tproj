@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectRootNode Name="BootCampForrestPatrol" IsExpanded="true" FileName="">
-    <IsSelected>true</IsSelected>
+    <IsSelected>false</IsSelected>
     <SubNodes>
       <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Client" IsExpanded="false" FileName="Client">
         <IsSelected>false</IsSelected>
         <SubNodes>
-          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="EventHandlers" IsExpanded="true" FileName="Client\EventHandlers">
-            <IsSelected>false</IsSelected>
-            <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="HandleDamage.sqx" IsExpanded="false" FileName="Client\EventHandlers\HandleDamage.sqx">
-                <IsSelected>false</IsSelected>
-                <SubNodes />
-              </ProjectNodeViewModel>
-            </SubNodes>
-          </ProjectNodeViewModel>
           <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitClient.sqx" IsExpanded="false" FileName="Client\InitClient.sqx">
             <IsSelected>false</IsSelected>
             <SubNodes />
@@ -29,7 +20,35 @@
             <SubNodes>
               <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="TrainingAmmo" IsExpanded="true" FileName="Engima\BootCamp\TrainingAmmo">
                 <IsSelected>false</IsSelected>
-                <SubNodes />
+                <SubNodes>
+                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Client" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Client">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes>
+                      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="EventHandlers" IsExpanded="true" FileName="Engima\BootCamp\TrainingAmmo\Client\EventHandlers">
+                        <IsSelected>false</IsSelected>
+                        <SubNodes>
+                          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="HandleDamage.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Client\EventHandlers\HandleDamage.sqf">
+                            <IsSelected>false</IsSelected>
+                            <SubNodes />
+                          </ProjectNodeViewModel>
+                        </SubNodes>
+                      </ProjectNodeViewModel>
+                    </SubNodes>
+                  </ProjectNodeViewModel>
+                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="true" FileName="Engima\BootCamp\TrainingAmmo\Server">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="UnitsSpawnService.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Server\UnitsSpawnService.sqf">
+                        <IsSelected>false</IsSelected>
+                        <SubNodes />
+                      </ProjectNodeViewModel>
+                    </SubNodes>
+                  </ProjectNodeViewModel>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Init.sqf">
+                    <IsSelected>true</IsSelected>
+                    <SubNodes />
+                  </ProjectNodeViewModel>
+                </SubNodes>
               </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
@@ -45,7 +64,7 @@
           <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="PatrolledAreas" IsExpanded="false" FileName="Engima\PatrolledAreas">
             <IsSelected>false</IsSelected>
             <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="true" FileName="Engima\PatrolledAreas\Server">
+              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="false" FileName="Engima\PatrolledAreas\Server">
                 <IsSelected>false</IsSelected>
                 <SubNodes>
                   <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Functions.sqf" IsExpanded="true" FileName="Engima\PatrolledAreas\Server\Functions.sqf">
@@ -93,13 +112,9 @@
                 <IsSelected>false</IsSelected>
                 <SubNodes />
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MissionEngine.sqx.sqf" IsExpanded="false" FileName="Server\Classes\MissionEngine.sqx.sqf">
-                <IsSelected>false</IsSelected>
-                <SubNodes />
-              </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
-          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitServer.sqx" IsExpanded="false" FileName="Server\InitServer.sqx">
+          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitServer.sqx" IsExpanded="true" FileName="Server\InitServer.sqx">
             <IsSelected>false</IsSelected>
             <SubNodes />
           </ProjectNodeViewModel>

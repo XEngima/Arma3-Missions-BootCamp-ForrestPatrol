@@ -1,11 +1,13 @@
 player addEventHandler ["HandleDamage", {
 	private _player = _this select 0;
 	private _damage = _this select 2;
-
-	[_player, _damage] spawn {
-		params ["_player", "_damage"];
 	
-		if (_damage + (getDammage _player) >= 0.75) then
+	ENG_BOOTCAMP_playerDamage = ENG_BOOTCAMP_playerDamage + _damage;
+
+	[_player] spawn {
+		params ["_player"];
+	
+		if (ENG_BOOTCAMP_playerDamage >= 1) then
 		{
 			_player setCaptive true;
 			titleText ["Dead!", "PLAIN"];

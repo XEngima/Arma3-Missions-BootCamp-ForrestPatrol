@@ -21,10 +21,14 @@ _parameters = [
 	["MIN_SKILL", 0.1],
 	["MAX_SKILL", 0.2],
 	["ON_GROUP_CREATED", {
-		eng_enemyLeader = leader (_this select 0);
+		params ["_group"];
 		
+		eng_enemyLeader = leader _group;
 		{
 			_x disableAI "WEAPONAIM";
+		} foreach units _group;
+
+		{
 			_x addEventHandler ["HandleDamage", {
 				scopeName "main";
 				private _unit = _this select 0;
