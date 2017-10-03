@@ -21,7 +21,7 @@
               <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="TrainingAmmo" IsExpanded="true" FileName="Engima\BootCamp\TrainingAmmo">
                 <IsSelected>false</IsSelected>
                 <SubNodes>
-                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Client" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Client">
+                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Client" IsExpanded="true" FileName="Engima\BootCamp\TrainingAmmo\Client">
                     <IsSelected>false</IsSelected>
                     <SubNodes>
                       <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="EventHandlers" IsExpanded="true" FileName="Engima\BootCamp\TrainingAmmo\Client\EventHandlers">
@@ -39,7 +39,7 @@
                       </ProjectNodeViewModel>
                     </SubNodes>
                   </ProjectNodeViewModel>
-                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Server">
+                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="true" FileName="Engima\BootCamp\TrainingAmmo\Server">
                     <IsSelected>false</IsSelected>
                     <SubNodes>
                       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitServer.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Server\InitServer.sqf">
@@ -47,7 +47,7 @@
                         <SubNodes />
                       </ProjectNodeViewModel>
                       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="UnitsSpawnService.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Server\UnitsSpawnService.sqf">
-                        <IsSelected>false</IsSelected>
+                        <IsSelected>true</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
                     </SubNodes>
@@ -82,7 +82,7 @@
                 </SubNodes>
               </ProjectNodeViewModel>
               <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="ConfigAndStart.sqf" IsExpanded="false" FileName="Engima\PatrolledAreas\ConfigAndStart.sqf">
-                <IsSelected>true</IsSelected>
+                <IsSelected>false</IsSelected>
                 <SubNodes />
               </ProjectNodeViewModel>
               <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Documentation.txt" IsExpanded="false" FileName="Engima\PatrolledAreas\Documentation.txt">
