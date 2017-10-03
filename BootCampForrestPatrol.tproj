@@ -33,11 +33,19 @@
                           </ProjectNodeViewModel>
                         </SubNodes>
                       </ProjectNodeViewModel>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitClient.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Client\InitClient.sqf">
+                        <IsSelected>false</IsSelected>
+                        <SubNodes />
+                      </ProjectNodeViewModel>
                     </SubNodes>
                   </ProjectNodeViewModel>
-                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="true" FileName="Engima\BootCamp\TrainingAmmo\Server">
+                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Server">
                     <IsSelected>false</IsSelected>
                     <SubNodes>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitServer.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Server\InitServer.sqf">
+                        <IsSelected>false</IsSelected>
+                        <SubNodes />
+                      </ProjectNodeViewModel>
                       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="UnitsSpawnService.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Server\UnitsSpawnService.sqf">
                         <IsSelected>false</IsSelected>
                         <SubNodes />
@@ -45,7 +53,7 @@
                     </SubNodes>
                   </ProjectNodeViewModel>
                   <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Init.sqf">
-                    <IsSelected>true</IsSelected>
+                    <IsSelected>false</IsSelected>
                     <SubNodes />
                   </ProjectNodeViewModel>
                 </SubNodes>
@@ -61,7 +69,7 @@
               </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
-          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="PatrolledAreas" IsExpanded="false" FileName="Engima\PatrolledAreas">
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="PatrolledAreas" IsExpanded="true" FileName="Engima\PatrolledAreas">
             <IsSelected>false</IsSelected>
             <SubNodes>
               <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="false" FileName="Engima\PatrolledAreas\Server">
@@ -74,7 +82,7 @@
                 </SubNodes>
               </ProjectNodeViewModel>
               <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="ConfigAndStart.sqf" IsExpanded="false" FileName="Engima\PatrolledAreas\ConfigAndStart.sqf">
-                <IsSelected>false</IsSelected>
+                <IsSelected>true</IsSelected>
                 <SubNodes />
               </ProjectNodeViewModel>
               <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Documentation.txt" IsExpanded="false" FileName="Engima\PatrolledAreas\Documentation.txt">
@@ -156,5 +164,7 @@
       </ProjectNodeViewModel>
     </SubNodes>
   </ProjectRootNode>
-  <FilteredAnalyzerResultItems />
+  <FilteredAnalyzerResultItems>
+    <string>Public variable 'ENG_BOOTCAMP_playerDamage' may be used before being assigned a value.</string>
+  </FilteredAnalyzerResultItems>
 </Project>

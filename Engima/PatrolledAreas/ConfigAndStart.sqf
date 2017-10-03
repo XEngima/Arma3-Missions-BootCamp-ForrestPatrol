@@ -11,7 +11,7 @@ private ["_parameters"];
 _parameters = [
 	["PATROL_AREAS", ["eng_patrolAreaMarker"]],
 	["HIDE_MARKERS", false],
-	["UNIT_CLASSES", ["O_G_Soldier_F", "O_G_Soldier_lite_F", "O_G_Soldier_SL_F", "O_G_Soldier_TL_F", "O_G_Soldier_AR_F", "O_G_medic_F", "O_G_engineer_F", "O_G_Soldier_exp_F", "O_G_Soldier_GL_F", "O_G_Soldier_M_F", "O_G_Soldier_LAT_F", "O_G_Soldier_A_F", "O_G_officer_F"]],
+	["UNIT_CLASSES", ["O_G_Soldier_F", "O_G_Soldier_lite_F"]],
 	["SIDE", east],
 	["MIN_UNITS_PER_GROUP", 2],
 	["MAX_UNITS_PER_GROUP", 2],
@@ -24,28 +24,10 @@ _parameters = [
 		params ["_group"];
 		
 		eng_enemyLeader = leader _group;
-		{
-			_x disableAI "WEAPONAIM";
-		} foreach units _group;
-
-		{
-			_x addEventHandler ["HandleDamage", {
-				scopeName "main";
-				private _unit = _this select 0;
-				private _hitdamage = _this select 2;
-				
-				private _totalDamage = _hitDamage + (getDammage _unit);
-				
-				if (_totalDamage >= 0.75) then
-				{
-					_unit setCaptive true;
-					_unit playMove "AmovPercMstpSsurWnonDnon";
-					_unit disableAI "ANIM";
-				};
-				
-				0
-			}];
-		} foreach units (_this select 0);
+		
+//		{
+//			_x disableAI "WEAPONAIM";
+//		} foreach units _group;
 	}],
 	["DEBUG", false]
 ];

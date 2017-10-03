@@ -1,23 +1,25 @@
 while { true } do {
 	{
-		private _inTrainingMode = _x getVariable ["ENG_BOOTCAMP_InTrainingMode", false];
+		private _unitInTrainingMode = _x getVariable ["ENG_BOOTCAMP_InTrainingMode", false];
 		
-		if (!_inTrainingMode) then
+		if (!_unitInTrainingMode) then
 		{
 			_x addEventHandler ["HandleDamage", {
 				private _unit = _this select 0;
 				private _hitdamage = _this select 2;
+				private _unitDamage = _unit getVariable ["ENG_BOOTCAMP_currentDamage", 0];
 				
-				private _totalDamage = _hitDamage + (getDammage _unit);
+				_unitDamage = _unitDamage + _hitDamage;
+				_unit setVariable ["ENG_BOOTCAMP_currentDamage", _unitDamage];
 				
-				if (_totalDamage >= 0.75) then
+				if (_unitDamage >= 0.85) then
 				{
 					_unit setCaptive true;
 					_unit playMove "AmovPercMstpSsurWnonDnon";
 					_unit disableAI "ANIM";
 				};
 				
-				_hitDamage
+				0
 			}];
 			
 			_x setVariable ["ENG_BOOTCAMP_InTrainingMode", true, false];

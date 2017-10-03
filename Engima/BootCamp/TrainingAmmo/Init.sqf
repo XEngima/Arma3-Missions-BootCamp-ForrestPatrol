@@ -1,5 +1,7 @@
-ENG_BOOTCAMP_playerDamage = 0;
+if (isServer) then {
+	call compile preprocessFileLineNumbers "Engima\BootCamp\TrainingAmmo\Server\InitServer.sqf";
+};
 
-call compile preprocessFileLineNumbers "Engima\BootCamp\TrainingAmmo\Client\EventHandlers\HandleDamage.sqf";
-
-execVM "Engima\BootCamp\TrainingAmmo\Server\UnitsSpawnService.sqf";
+if (!isDedicated) then {
+	call compile preprocessFileLineNumbers "Engima\BootCamp\TrainingAmmo\Client\InitClient.sqf";
+};
