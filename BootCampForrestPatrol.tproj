@@ -7,7 +7,7 @@
         <IsSelected>false</IsSelected>
         <SubNodes>
           <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitClient.sqx" IsExpanded="true" FileName="Client\InitClient.sqx">
-            <IsSelected>true</IsSelected>
+            <IsSelected>false</IsSelected>
             <SubNodes />
           </ProjectNodeViewModel>
         </SubNodes>
@@ -67,14 +67,14 @@
                   </ProjectNodeViewModel>
                 </SubNodes>
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="TrainingMonitor" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor">
+              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="TrainingMonitor" IsExpanded="true" FileName="Engima\BootCamp\TrainingMonitor">
                 <IsSelected>false</IsSelected>
                 <SubNodes>
                   <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Classes" IsExpanded="true" FileName="Engima\BootCamp\TrainingMonitor\Classes">
                     <IsSelected>false</IsSelected>
                     <SubNodes>
                       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MemberDistanceMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\MemberDistanceMonitor.sqx">
-                        <IsSelected>false</IsSelected>
+                        <IsSelected>true</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
                       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MonitorUnit.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\MonitorUnit.sqx">

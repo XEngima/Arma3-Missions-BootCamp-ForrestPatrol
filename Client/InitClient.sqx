@@ -1,5 +1,13 @@
+using Engima.BootCamp.TrainingMonitor;
+
 [] spawn {
 	waitUntil { !isNil "ENG_memberDistanceMonitor" };	
-	//player sideChat str ENG_memberDistanceMonitor;
-	execVM "dialog.sqf";
+	private _memberDistanceMonitor = ENG_memberDistanceMonitor as MemberDistanceMonitor;
+	
+	createDialog "BriefingDialog";
+	
+	ctrlSetText [40, "Huvud"];
+	ctrlSetText [41, call _memberDistanceMonitor.GetReport];
+	
+	waitUntil { !dialog };
 };

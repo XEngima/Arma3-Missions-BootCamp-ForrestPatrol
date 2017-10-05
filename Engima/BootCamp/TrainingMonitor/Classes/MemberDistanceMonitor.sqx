@@ -32,9 +32,8 @@ namespace Engima.BootCamp.TrainingMonitor
 			scopeName "main";
 			
 			{
-				if (_x.Unit == _unit) then {
+				if (_x.Unit == _unit && _x.Feedback == _feedback) then {
 					_x.Score = _x.Score + _score;
-					player sideChat (call _x.ToString);
 					breakOut "main";
 				};
 			} foreach _mMonitorUnits as MonitorUnit;
@@ -46,19 +45,25 @@ namespace Engima.BootCamp.TrainingMonitor
 			while { _mRunning } do {
 				{
 					private _unit = _x;
+					private _tooFar = true;
 					
 					{
 						private _otherUnit = _x;
 						
 						if (_unit != _otherUnit) then {
 							if (_unit distance _otherUnit < _mMinDistance) then {
-								[_unit, name _unit + " too close to " + name _otherUnit, -1] call _self.AddUnitScore;
+								[_unit, "Too close to " + name _otherUnit, -1] call _self.AddUnitScore;
 							};
-//							if (_unit distance _otherUnit > _mMaxDistance) then {
-//								[_unit, name _unit + " too far to " + name _otherUnit, -1] call _self.AddUnitScore;
-//							};
+							if (_unit distance _otherUnit < _mMaxDistance) then {
+								_tooFar = false;
+							};
 						};
 					} foreach units _mGroup as Object;
+					
+					if (_tooFar) then {
+						[_unit, "Too far away from other team member.", -1] call _self.AddUnitScore;
+					};
+					
 				} foreach units _mGroup as Object;
 				
 				sleep 1;
@@ -72,6 +77,18 @@ namespace Engima.BootCamp.TrainingMonitor
 		
 		public method Stop {
 			_mRunning = false;
+		};
+		
+		public method GetReport {
+			private _report = "";
+			private _newLine = "";
+			
+			{
+				_report = _report + _newLine + (call _x.ToString);
+				_newLine = "\n";
+			} foreach _mMonitorUnits as MonitorUnit;
+			
+			_report
 		};
 	};
 };

@@ -42,7 +42,7 @@ namespace Mission.Server
 			
 			["Mission has started. Enemy patrol is on the move!"] call dre_fnc_CL_ShowTitleTextAllClients;
 			
-			_memberDistanceMonitor = [group (allPlayers select 0), 5, 10] new MemberDistanceMonitor;
+			_memberDistanceMonitor = [group (allPlayers select 0), 5, 30] new MemberDistanceMonitor;
 			call _memberDistanceMonitor.Start;
 			
 			waitUntil { !isNil "eng_enemyLeader" };
