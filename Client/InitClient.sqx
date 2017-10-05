@@ -1,0 +1,5 @@
+[] spawn {
+	waitUntil { !isNil "ENG_memberDistanceMonitor" };	
+	//player sideChat str ENG_memberDistanceMonitor;
+	execVM "dialog.sqf";
+};

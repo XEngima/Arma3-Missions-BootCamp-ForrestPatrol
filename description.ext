@@ -1,3 +1,5 @@
+#include "Description\Dialog.ext"
+
 // Mission Header
 class Header
 {

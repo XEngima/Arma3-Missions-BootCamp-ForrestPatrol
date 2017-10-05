@@ -1,6 +1,6 @@
 call compile preprocessFileLineNumbers "Server\Classes\MissionEngine.sqx";
 
-using BootCampForrestPatrol.Server;
+using Mission.Server;
 
 private ["_missionEngine" as MissionEngine];
 

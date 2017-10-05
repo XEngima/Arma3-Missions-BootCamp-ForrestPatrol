@@ -547,7 +547,7 @@ class Mission
 			position[]={13816.006,52.488602,22101.51};
 			class Attributes
 			{
-				onActivation="_nil = (createGroup west) createUnit [""B_Soldier_F"", getMarkerPos ""themarker"", [], 0, ""FORM""];";
+				onActivation="_nil = execVM ""dialog.sqf"";";
 				sizeA=0;
 				sizeB=0;
 				activationBy="ALPHA";

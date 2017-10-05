@@ -1,3 +1,5 @@
+call compile preprocessFileLineNumbers "Shared\InitShared.sqx";
+
 if (isServer) then {
 	execVM "Server\InitServer.sqx";
 };

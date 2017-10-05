@@ -25,9 +25,14 @@ _parameters = [
 		
 		eng_enemyLeader = leader _group;
 		
-//		{
-//			_x disableAI "WEAPONAIM";
-//		} foreach units _group;
+		[_group] spawn {
+			params ["_group"];
+			private _unitsCount = count units _group;
+			
+			waitUntil { { _x getVariable ["ENG_BOOTCAMP_isNeutralized", false] } count units group eng_enemyLeader >= _unitsCount};
+			ENG_missionSuccess = true;
+			publicVariable "ENG_missionSuccess";
+		};
 	}],
 	["DEBUG", false]
 ];

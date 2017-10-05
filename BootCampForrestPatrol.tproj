@@ -3,10 +3,19 @@
   <ProjectRootNode Name="BootCampForrestPatrol" IsExpanded="true" FileName="">
     <IsSelected>false</IsSelected>
     <SubNodes>
-      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Client" IsExpanded="false" FileName="Client">
+      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Client" IsExpanded="true" FileName="Client">
         <IsSelected>false</IsSelected>
         <SubNodes>
-          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitClient.sqx" IsExpanded="false" FileName="Client\InitClient.sqx">
+          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitClient.sqx" IsExpanded="true" FileName="Client\InitClient.sqx">
+            <IsSelected>true</IsSelected>
+            <SubNodes />
+          </ProjectNodeViewModel>
+        </SubNodes>
+      </ProjectNodeViewModel>
+      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Description" IsExpanded="false" FileName="Description">
+        <IsSelected>false</IsSelected>
+        <SubNodes>
+          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Dialog.ext" IsExpanded="false" FileName="Description\Dialog.ext">
             <IsSelected>false</IsSelected>
             <SubNodes />
           </ProjectNodeViewModel>
@@ -47,7 +56,7 @@
                         <SubNodes />
                       </ProjectNodeViewModel>
                       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="UnitsSpawnService.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Server\UnitsSpawnService.sqf">
-                        <IsSelected>true</IsSelected>
+                        <IsSelected>false</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
                     </SubNodes>
@@ -55,6 +64,24 @@
                   <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Init.sqf">
                     <IsSelected>false</IsSelected>
                     <SubNodes />
+                  </ProjectNodeViewModel>
+                </SubNodes>
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="TrainingMonitor" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor">
+                <IsSelected>false</IsSelected>
+                <SubNodes>
+                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Classes" IsExpanded="true" FileName="Engima\BootCamp\TrainingMonitor\Classes">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MemberDistanceMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\MemberDistanceMonitor.sqx">
+                        <IsSelected>false</IsSelected>
+                        <SubNodes />
+                      </ProjectNodeViewModel>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MonitorUnit.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\MonitorUnit.sqx">
+                        <IsSelected>false</IsSelected>
+                        <SubNodes />
+                      </ProjectNodeViewModel>
+                    </SubNodes>
                   </ProjectNodeViewModel>
                 </SubNodes>
               </ProjectNodeViewModel>
@@ -128,6 +155,15 @@
           </ProjectNodeViewModel>
         </SubNodes>
       </ProjectNodeViewModel>
+      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Shared" IsExpanded="true" FileName="Shared">
+        <IsSelected>false</IsSelected>
+        <SubNodes>
+          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitShared.sqx" IsExpanded="false" FileName="Shared\InitShared.sqx">
+            <IsSelected>false</IsSelected>
+            <SubNodes />
+          </ProjectNodeViewModel>
+        </SubNodes>
+      </ProjectNodeViewModel>
       <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Sqx" IsExpanded="false" FileName="Sqx">
         <IsSelected>false</IsSelected>
         <SubNodes>
@@ -151,6 +187,10 @@
         </SubNodes>
       </ProjectNodeViewModel>
       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="description.ext" IsExpanded="false" FileName="description.ext">
+        <IsSelected>false</IsSelected>
+        <SubNodes />
+      </ProjectNodeViewModel>
+      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="dialog.sqf" IsExpanded="false" FileName="dialog.sqf">
         <IsSelected>false</IsSelected>
         <SubNodes />
       </ProjectNodeViewModel>

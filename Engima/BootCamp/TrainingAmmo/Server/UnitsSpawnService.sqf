@@ -15,6 +15,7 @@ while { true } do {
 				if (_unitDamage >= 0.85) then
 				{
 					_unit setCaptive true;
+					_unit setVariable ["ENG_BOOTCAMP_isNeutralized", true, true];
 					_unit playMove "AmovPercMstpSsurWnonDnon";
 					_unit disableAI "ANIM";
 				};

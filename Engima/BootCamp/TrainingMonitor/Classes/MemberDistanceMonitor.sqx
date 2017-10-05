@@ -1,0 +1,77 @@
+/*
+ * Name:	MemberDistanceMonitor
+ * Date:	2017-10-03
+ * Version: 1.0
+ * Author:  Engima
+ *
+ * Description:
+ * A training monitor that monitors and calculates a score for a group's combat behavior.
+ */
+call compile preprocessFileLineNumbers "Engima\BootCamp\TrainingMonitor\Classes\MonitorUnit.sqx";
+ 
+namespace Engima.BootCamp.TrainingMonitor
+{
+	public class MemberDistanceMonitor
+	{
+		private fields ["_mGroup" as Group, "_mMinDistance" as Scalar, "_mMaxDistance" as Scalar, "_mMonitorUnits" as Array, "_mRunning" as Boolean];
+	
+		// Creates a StandardTrainingMonitor object.
+		public constructor {
+			params ["_group" as Group, "_minDistance" as Scalar, "_maxDistance" as Scalar];
+			
+			_mGroup = _group;
+			_mMinDistance = _minDistance;
+			_mMaxDistance = _maxDistance;
+			_mMonitorUnits = [];
+			_mRunning = false;
+		};
+		
+		private method AddUnitScore {
+			params ["_unit" as Object, "_feedback" as String, "_score" as Scalar];
+			
+			scopeName "main";
+			
+			{
+				if (_x.Unit == _unit) then {
+					_x.Score = _x.Score + _score;
+					player sideChat (call _x.ToString);
+					breakOut "main";
+				};
+			} foreach _mMonitorUnits as MonitorUnit;
+			
+			_mMonitorUnits pushBack [_unit, _feedback, _score] new MonitorUnit;
+		};
+		
+		private method Run {
+			while { _mRunning } do {
+				{
+					private _unit = _x;
+					
+					{
+						private _otherUnit = _x;
+						
+						if (_unit != _otherUnit) then {
+							if (_unit distance _otherUnit < _mMinDistance) then {
+								[_unit, name _unit + " too close to " + name _otherUnit, -1] call _self.AddUnitScore;
+							};
+//							if (_unit distance _otherUnit > _mMaxDistance) then {
+//								[_unit, name _unit + " too far to " + name _otherUnit, -1] call _self.AddUnitScore;
+//							};
+						};
+					} foreach units _mGroup as Object;
+				} foreach units _mGroup as Object;
+				
+				sleep 1;
+			};
+		};
+		
+		public method Start {
+			_mRunning = true;
+			[] spawn _self.Run;	
+		};
+		
+		public method Stop {
+			_mRunning = false;
+		};
+	};
+};

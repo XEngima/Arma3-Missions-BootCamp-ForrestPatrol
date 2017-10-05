@@ -1,0 +1,33 @@
+/*
+ * Name:	MonitorUnit
+ * Date:	2017-10-03
+ * Version: 1.0
+ * Author:  Engima
+ *
+ * Description:
+ * A class that models a unit with given feedback and a relative score.
+ */
+namespace Engima.BootCamp.TrainingMonitor
+{
+	public class MonitorUnit
+	{
+		// Creates a MonitorUnit object.
+		public constructor {
+			params ["_unit" as Object, "_feedback" as String, "_score" as Scalar];
+			
+			_self.Unit = _unit;
+			_self.Feedback = _feedback;
+			_self.Score = _score;
+		};
+		
+		public property Object Unit { get; private set; };
+		
+		public property String Feedback { get; private set; };
+		
+		public property Scalar Score { get; set; };
+		
+		public method ToString {
+			(name _self.Unit) + ", " + _self.Feedback + ", " + (str _self.Score)
+		};
+	};
+};

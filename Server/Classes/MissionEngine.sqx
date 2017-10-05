@@ -9,19 +9,29 @@
  */
  
 using Sqx.Markers;
+using Engima.BootCamp.TrainingMonitor;
  
-namespace BootCampForrestPatrol.Server
+namespace Mission.Server
 {
 	public class MissionEngine
 	{
 		private fields ["_mStartPos"];
 	
 		// Creates a MissionEngine object.
-		public constructor {
-			
+		public constructor {			
+		};
+		
+		private method MonitorPlayerAliveStatus {
+			waitUntil { { _x getVariable ["ENG_BOOTCAMP_isNeutralized", false] } count allPlayers == count allPlayers };
+			ENG_missionFailure = true;
+			publicVariable "ENG_missionFailure";
 		};
 		
 		public method Start {
+			private ["_memberDistanceMonitor" as MemberDistanceMonitor];
+			
+			[] spawn _self.MonitorPlayerAliveStatus;
+			
 			waitUntil { count allPlayers > 0 };
 			
 			//_mStartPos = getPos (allPlayers select 0); TODO: Kompilerar fel - ett semikolon för mycket!
@@ -32,12 +42,24 @@ namespace BootCampForrestPatrol.Server
 			
 			["Mission has started. Enemy patrol is on the move!"] call dre_fnc_CL_ShowTitleTextAllClients;
 			
+			_memberDistanceMonitor = [group (allPlayers select 0), 5, 10] new MemberDistanceMonitor;
+			call _memberDistanceMonitor.Start;
+			
 			waitUntil { !isNil "eng_enemyLeader" };
 			
-			waitUntil { sleep (random 60); { eng_enemyLeader distance _x < 400 } count allPlayers > 0 };
+			[] spawn {
+				waitUntil { sleep (random 60); { eng_enemyLeader distance _x < 400 } count allPlayers > 0 };
 			
-			[getPos eng_enemyLeader, "o_inf", "ColorOpfor"] call Marker.CreateIconMarker as Marker;
-			["Enemy patrol sighted in direction " + str (round ((leader group player) getDir getPos eng_enemyLeader)) + ". Moving in direction " + str (round getDir eng_enemyLeader) + "."] call dre_fnc_CL_ShowTitleTextAllClients;
+				[getPos eng_enemyLeader, "o_inf", "ColorOpfor"] call Marker.CreateIconMarker as Marker;
+				["Enemy patrol sighted in direction " + str (round ((leader group player) getDir getPos eng_enemyLeader)) + ". Moving in direction " + str (round getDir eng_enemyLeader) + "."] call dre_fnc_CL_ShowTitleTextAllClients;
+			};
+			
+			// Wait until either all enemies are dead, or all players are dead
+			waitUntil { sleep 2; !isNil "ENG_missionSuccess" || !isNil "ENG_missionFailure" };
+			ENG_memberDistanceMonitor = _memberDistanceMonitor;
+			publicVariable "ENG_memberDistanceMonitor";
+			
+			call _memberDistanceMonitor.Stop;
 		};
 	};
 };
