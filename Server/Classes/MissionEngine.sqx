@@ -28,7 +28,7 @@ namespace Mission.Server
 		};
 		
 		public method Start {
-			private ["_memberDistanceMonitor" as MemberDistanceMonitor];
+			private ["_memberDistanceMonitor" as MemberDistanceMonitor, "_lifeStateMonitor" as LifeStateMonitor];
 			
 			[] spawn _self.MonitorPlayerAliveStatus;
 			
@@ -43,7 +43,10 @@ namespace Mission.Server
 			["Mission has started. Enemy patrol is on the move!"] call dre_fnc_CL_ShowTitleTextAllClients;
 			
 			_memberDistanceMonitor = [group (allPlayers select 0), 5, 30] new MemberDistanceMonitor;
+			_lifeStateMonitor = [group (allPlayers select 0)] new LifeStateMonitor;
+			
 			call _memberDistanceMonitor.Start;
+			call _lifeStateMonitor.Start;
 			
 			waitUntil { !isNil "eng_enemyLeader" };
 			
@@ -56,10 +59,15 @@ namespace Mission.Server
 			
 			// Wait until either all enemies are dead, or all players are dead
 			waitUntil { sleep 2; !isNil "ENG_missionSuccess" || !isNil "ENG_missionFailure" };
-			ENG_memberDistanceMonitor = _memberDistanceMonitor;
-			publicVariable "ENG_memberDistanceMonitor";
 			
 			call _memberDistanceMonitor.Stop;
+			call _lifeStateMonitor.Stop;
+			
+			ENG_memberDistanceMonitor = _memberDistanceMonitor;
+			ENG_lifeStateMonitor = _lifeStateMonitor;
+			
+			publicVariable "ENG_memberDistanceMonitor";
+			publicVariable "ENG_lifeStateMonitor";
 		};
 	};
 };

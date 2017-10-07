@@ -122,8 +122,28 @@ class BaseDialog {
 		x = 0.05;
 		y = 0.05;
 		w = 0.9;
-		h = 0.09;
+		h = 0.12;
 	};
+	
+	class BaseMultilineHeader {
+		idc = -1;              // set to -1, unneeded
+		moving = 0;            // left click (and hold) this control to move the dialog
+		                       // (requires "movingEnabled" to be 1, see above)
+		type = CT_STATIC;      // constant
+		style = ST_MULTI_NOBORDER;       // constant
+		text = "BaseText";
+		font = FontM;
+		sizeEx = 0.03;
+		lineSpacing = 1;
+
+		colorBackground[] = { 1, 1, 1, 0 };
+		colorText[] = { 0, 0, 0, 1 };
+
+		x = 0.05;
+		y = 0.15;
+		w = 0.9;
+		h = 0.8;
+	}
 	
 	class BaseMultilineText {
 		idc = -1;              // set to -1, unneeded
@@ -140,7 +160,7 @@ class BaseDialog {
 		colorText[] = { 0, 0, 0, 1 };
 
 		x = 0.05;
-		y = 0.15;
+		y = 0.2;
 		w = 0.9;
 		h = 0.8;
 	}
@@ -178,7 +198,7 @@ class BaseDialog {
 	class BaseCloseButton : BaseButton {
 		default = true;
 		x = 0.8; y = 0.95;
-		w = 0.2; h = 0.1;
+		w = 0.15; h = 0.1;
 		text = "Close";
 		action = " closeDialog 0; ";
 	};
@@ -229,17 +249,67 @@ class TechTreeDialog : BaseDialog {
 };
 
 class BriefingDialog : BaseDialog {
-	controls[] = { BaseBackground, Header, Text, BaseCloseButton };
+	controls[] = { BaseBackground, Header, TeamDistanceHeader, TeamDistanceText, LifeStateHeader, LifeStateText, TotalHeader, TotalText, BaseCloseButton };
 	
 	class Header : BaseDialogHeader {
 		idc = 40;
-		text = "Tutorial Header";
+		text = "Briefing";
 	};
 	
-	class Text : BaseMultilineText {
-		idc = 41;
-		text = "Tutorial text.";
+	class TeamDistanceHeader : BaseMultilineHeader {
+		idc = 50;
+		text = "Distance between team members";
+		x = 0.05;
+		y = 0.15;
+		w = 0.9;
+		h = 0.8;
 	};
+	
+	class TeamDistanceText : BaseMultilineText {
+		idc = 51;
+		text = "Tutorial text.";
+		x = 0.05;
+		y = 0.20;
+		w = 0.9;
+		h = 0.8;
+	};
+	
+	class LifeStateHeader : BaseMultilineHeader {
+		idc = 60;
+		text = "Distance between team members";
+		x = 0.5;
+		y = 0.15;
+		w = 0.9;
+		h = 0.8;
+	};
+	
+	class LifeStateText : BaseMultilineText {
+		idc = 61;
+		text = "Tutorial text.";
+		x = 0.5;
+		y = 0.20;
+		w = 0.9;
+		h = 0.8;
+	};
+	
+	class TotalHeader : BaseMultilineHeader {
+		idc = 100;
+		text = "Total Team Score";
+		x = 0.05;
+		y = 0.45;
+		w = 0.9;
+		h = 0.8;
+	};
+	
+	class TotalText : BaseMultilineText {
+		idc = 101;
+		text = "Tutorial text.";
+		x = 0.05;
+		y = 0.50;
+		w = 0.9;
+		h = 0.8;
+	};
+	
 	/*
 	class DontShowThisAgainButton : BaseButton {
 		x = 0.59; y = 0.95;

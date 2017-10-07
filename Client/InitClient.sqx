@@ -1,13 +1,22 @@
 using Engima.BootCamp.TrainingMonitor;
 
 [] spawn {
-	waitUntil { !isNil "ENG_memberDistanceMonitor" };	
+	waitUntil { !isNil "ENG_memberDistanceMonitor" && !isNil "ENG_lifeStateMonitor" };	
 	private _memberDistanceMonitor = ENG_memberDistanceMonitor as MemberDistanceMonitor;
+	private _lifeStateMonitor = ENG_lifeStateMonitor as LifeStateMonitor;
 	
 	createDialog "BriefingDialog";
 	
-	ctrlSetText [40, "Distance To Team Members"];
-	ctrlSetText [41, call _memberDistanceMonitor.GetReport];
+	ctrlSetText [50, "Distance To Team Members"];
+	ctrlSetText [51, call _memberDistanceMonitor.GetReport];
+	
+	ctrlSetText [60, "Life State"];
+	ctrlSetText [61, call _lifeStateMonitor.GetReport];
+	
+	private _totalTeamScore = floor ((call _memberDistanceMonitor.GetTeamScore) + (call _lifeStateMonitor.GetTeamScore)) / 2;
+	
+	ctrlSetText [100, "Total Team Score"];
+	ctrlSetText [101, (str _totalTeamScore) + "/1000"];
 	
 	waitUntil { !dialog };
 };

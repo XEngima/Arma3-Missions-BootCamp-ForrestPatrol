@@ -1,0 +1,76 @@
+/*
+ * Name:	LifeStateMonitor
+ * Date:	2017-10-07
+ * Version: 1.0
+ * Author:  Engima
+ *
+ * Description:
+ * A training monitor that monitors and calculates a score for a group's dead or alive state.
+ */
+
+using Sqx.Collections;
+
+namespace Engima.BootCamp.TrainingMonitor
+{
+	public class LifeStateMonitor : ITrainingMonitor
+	{
+		private fields ["_mGroup" as Group, "_mMonitorUnits" as Array, "_mRunning" as Boolean, "_mTeamScore" as Scalar];
+	
+		// Creates a LifeStateMonitor object.
+		public constructor {
+			params ["_group" as Group];
+			
+			_mGroup = _group;
+			_mMonitorUnits = [];
+			_mRunning = false;
+			_mTeamScore = 1000;
+		};
+		
+		public method Start {
+			_mRunning = true;
+		};
+		
+		public method Stop {
+			if (_mRunning) then {
+				_mRunning = false;
+				
+				private _unitsCount = count units _mGroup;
+				private _minusScore = 0;
+				
+				{
+					private _text = "alive";
+					
+					if (_x getVariable ["ENG_BOOTCAMP_isNeutralized", false]) then {
+						_text = "killed";
+						_minusScore = -floor (1000 / _unitsCount);
+					};
+					
+					[_mMonitorUnits, _x, _text, _minusScore] call MonitorUnit.AddUnitScore;
+					_mTeamScore = _mTeamScore + _minusScore;
+				} foreach units _mGroup as Object;
+				
+				if (_mTeamScore < 0) then {
+					_mTeamScore = 0;
+				};
+			};
+		};
+		
+		public method Scalar GetTeamScore {
+			_mTeamScore
+		};
+		
+		public method String GetReport {
+			private _report = "";
+			private _newLine = "";
+			
+			{
+				_report = _report + _newLine + (call _x.ToString);
+				_newLine = "\n";
+			} foreach ([_mMonitorUnits, false] call Sorter.QSort) as MonitorUnit;
+			
+			_report = _report + _newLine + "Total: " + str _mTeamScore + "/1000";
+			
+			_report
+		};
+	};
+};

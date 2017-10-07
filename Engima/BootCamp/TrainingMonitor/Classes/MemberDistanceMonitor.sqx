@@ -14,11 +14,11 @@ using Sqx.Collections;
  
 namespace Engima.BootCamp.TrainingMonitor
 {
-	public class MemberDistanceMonitor
+	public class MemberDistanceMonitor : ITrainingMonitor
 	{
 		private fields ["_mGroup" as Group, "_mMinDistance" as Scalar, "_mMaxDistance" as Scalar, "_mMonitorUnits" as Array, "_mRunning" as Boolean];
 	
-		// Creates a StandardTrainingMonitor object.
+		// Creates a MemberDistanceMonitor object.
 		public constructor {
 			params ["_group" as Group, "_minDistance" as Scalar, "_maxDistance" as Scalar];
 			
@@ -29,42 +29,28 @@ namespace Engima.BootCamp.TrainingMonitor
 			_mRunning = false;
 		};
 		
-		private method AddUnitScore {
-			params ["_unit" as Object, "_feedback" as String, "_score" as Scalar];
-			
-			scopeName "main";
-			
-			{
-				if (_x.Unit == _unit && _x.Feedback == _feedback) then {
-					_x.Score = _x.Score + _score;
-					breakOut "main";
-				};
-			} foreach _mMonitorUnits as MonitorUnit;
-			
-			_mMonitorUnits pushBack [_unit, _feedback, _score] new MonitorUnit;
-		};
-		
 		private method Run {
 			while { _mRunning } do {
 				{
 					private _unit = _x;
-					private _tooFar = true;
+					private _closestMemberDistance = 1000000;
 					
 					{
 						private _otherUnit = _x;
 						
 						if (_unit != _otherUnit) then {
 							if (_unit distance _otherUnit < _mMinDistance) then {
-								[_unit, "Too close to team member.", -1] call _self.AddUnitScore;
+								[_mMonitorUnits, _unit, "Too close to team member", -5 + floor (_unit distance _otherUnit)] call MonitorUnit.AddUnitScore;
 							};
-							if (_unit distance _otherUnit < _mMaxDistance) then {
-								_tooFar = false;
+							
+							if (_unit distance _otherUnit < _closestMemberDistance) then {
+								_closestMemberDistance = _unit distance _otherUnit;
 							};
 						};
 					} foreach units _mGroup as Object;
 					
-					if (_tooFar) then {
-						[_unit, "Too far from team membes.", -1] call _self.AddUnitScore;
+					if (_closestMemberDistance > _mMaxDistance) then {
+						[_unit, "Too far from team members", -ceil((_closestMemberDistance - _mMaxDistance) / 5)] call MonitorUnit.AddUnitScore;
 					};
 					
 				} foreach units _mGroup as Object;
@@ -74,24 +60,42 @@ namespace Engima.BootCamp.TrainingMonitor
 		};
 		
 		public method Start {
-			_mRunning = true;
-			[] spawn _self.Run;	
+			if (count units _mGroup > 1) then {
+				_mRunning = true;
+				[] spawn _self.Run;	
+			};
 		};
 		
 		public method Stop {
 			_mRunning = false;
 		};
 		
-		public method GetReport {
+		public method String GetReport {
 			private _report = "";
 			private _newLine = "";
 			
 			{
 				_report = _report + _newLine + (call _x.ToString);
 				_newLine = "\n";
-			} foreach ([_mMonitorUnits] call Sorter.QSort) as MonitorUnit;
+			} foreach ([_mMonitorUnits, false] call Sorter.QSort) as MonitorUnit;
+			
+			_report = _report + _newLine + "Total: " + str (call _self.GetTeamScore) + "/1000";
 			
 			_report
+		};
+		
+		public method Scalar GetTeamScore {
+			private _score = 1000;
+		
+			{
+				_score = _score + _x.Score;
+			} foreach _mMonitorUnits as MonitorUnit;
+			
+			if (_score < 0) then {
+				_score = 0;
+			};
+			
+			_score
 		};
 	};
 };

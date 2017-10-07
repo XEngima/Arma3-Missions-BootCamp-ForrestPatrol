@@ -23,6 +23,29 @@ namespace Engima.BootCamp.TrainingMonitor
 			_self.Score = _score;
 		};
 		
+		public static method AddUnitScore {
+			params ["_monitorUnits" as Array, "_unit" as Object, "_feedback" as String, "_score" as Scalar];
+			
+			scopeName "main";
+			
+			{
+				if (_x.Unit == _unit && _x.Feedback == _feedback) then {
+					_x.Score = _x.Score + _score;
+					
+					if (_x.Score < -1000) then {
+						_x.Score = -1000;
+					};
+					breakOut "main";
+				};
+			} foreach _monitorUnits as MonitorUnit;
+			
+			if (_score < -1000) then {
+				_score = -1000;
+			};
+					
+			_monitorUnits pushBack [_unit, _feedback, _score] new MonitorUnit;
+		};
+		
 		public property Object Unit { get; private set; };
 		
 		public property String Feedback { get; private set; };
@@ -44,7 +67,7 @@ namespace Engima.BootCamp.TrainingMonitor
 		};
 		
 		public method ToString {
-			(name _self.Unit) + ", " + _self.Feedback + ", " + (str _self.Score)
+			(name _self.Unit) + ": " + _self.Feedback + ", " + (str _self.Score)
 		};
 	};
 };

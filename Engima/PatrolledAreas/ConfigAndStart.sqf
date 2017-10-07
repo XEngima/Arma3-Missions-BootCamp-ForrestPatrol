@@ -7,14 +7,16 @@
 
 private ["_parameters"];
 
+private _playerCount = count units group ((call BIS_fnc_listPlayers) select 0);
+
 // Set custom parameters here
 _parameters = [
 	["PATROL_AREAS", ["eng_patrolAreaMarker"]],
 	["HIDE_MARKERS", false],
 	["UNIT_CLASSES", ["O_G_Soldier_F", "O_G_Soldier_lite_F"]],
 	["SIDE", east],
-	["MIN_UNITS_PER_GROUP", 2],
-	["MAX_UNITS_PER_GROUP", 2],
+	["MIN_UNITS_PER_GROUP", _playerCount],
+	["MAX_UNITS_PER_GROUP", _playerCount],
 	["SPAWN_DISTANCE", 8000],
 	["AREA_PER_GROUP", 1000000],
 	["GROUP_PROBABILITY_OF_PRESENCE", 1],
