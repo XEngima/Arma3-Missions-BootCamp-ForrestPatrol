@@ -6,7 +6,7 @@ using Engima.BootCamp.TrainingMonitor;
 	
 	createDialog "BriefingDialog";
 	
-	ctrlSetText [40, "Huvud"];
+	ctrlSetText [40, "Distance To Team Members"];
 	ctrlSetText [41, call _memberDistanceMonitor.GetReport];
 	
 	waitUntil { !dialog };

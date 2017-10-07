@@ -55,7 +55,7 @@ namespace Engima.BootCamp.TrainingMonitor
 						
 						if (_unit != _otherUnit) then {
 							if (_unit distance _otherUnit < _mMinDistance) then {
-								[_unit, "Too close to " + name _otherUnit, -1] call _self.AddUnitScore;
+								[_unit, "Too close to team member.", -1] call _self.AddUnitScore;
 							};
 							if (_unit distance _otherUnit < _mMaxDistance) then {
 								_tooFar = false;
@@ -64,7 +64,7 @@ namespace Engima.BootCamp.TrainingMonitor
 					} foreach units _mGroup as Object;
 					
 					if (_tooFar) then {
-						[_unit, "Too far away from other team member.", -1] call _self.AddUnitScore;
+						[_unit, "Too far from team membes.", -1] call _self.AddUnitScore;
 					};
 					
 				} foreach units _mGroup as Object;
