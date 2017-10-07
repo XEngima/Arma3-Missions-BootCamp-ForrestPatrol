@@ -1,0 +1,84 @@
+call compile preprocessFileLineNumbers "Sqx\Collections\IComparer.sqx";
+
+/*
+ * Name:	Sorter
+ * Date:	2017-05-24
+ * Version: 1.0
+ * Author:  Engima
+ *
+ * Description:
+ * Object that can sort ISortables.
+ */
+namespace Sqx.Collections
+{
+	public class Sorter
+	{
+		// Performs a qsort on the provided array.
+		// _array (Array): The list of items to sort. All items need to be ISortable.
+		// _ascending (Boolean): Optional. true to order ascending, false to order descending.
+		//   Default value: true.
+		// Returns (Array): The sorted list.
+		public static method Array QSort {
+			params ["_array" as Array, ["_ascending" as Boolean, true]];
+			private ["_result" as Array, "_item1" as IComparer, "_item2" as IComparer];
+			
+			if (count _array <= 1) then {
+				_result = +_array;
+			};
+			
+			if (count _array == 2) then {
+				_item1 = _array select 0 as IComparer;
+				_item2 = _array select 1 as IComparer;
+				
+				if ([_item2] call _item1.Compare < 0) then {
+					_result = [_item1, _item2];
+				}
+				else {
+					_result = [_item2, _item1];
+				};
+			};
+			
+			if (count _array >= 3) then {
+				private ["_array1" as Array, "_array2" as Array];
+				private ["_middleItem" as IComparer, "_compareValue" as Scalar, "_putLeft" as Boolean];
+				
+				_middleItem = _array select floor random count _array;
+				
+				_array1 = [];
+				_array2 = [];
+				_putLeft = true;
+				
+				{
+					_compareValue = [_middleItem] call (_x as IComparer).Compare;
+					if (_compareValue == 0) then {
+						if (_putLeft) then {
+							_array1 pushBack _x;
+						}
+						else {
+							_array2 pushBack _x;
+						};
+						
+						_putLeft = !_putLeft;
+					}
+					else {
+						if (_compareValue < 0) then {
+							_array1 pushBack _x;
+						}
+						else {
+							_array2 pushBack _x;
+						};
+					};
+				
+				} foreach _array;
+				
+				_result = ([_array1] call _self.QSort) + ([_array2] call _self.QSort);
+			};
+			
+			if (!_ascending) then {
+				reverse _result;
+			};
+			
+			_result
+		};
+	};
+};

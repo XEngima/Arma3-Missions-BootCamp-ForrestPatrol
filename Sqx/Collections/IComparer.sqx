@@ -1,0 +1,20 @@
+/*
+ * Name:	ISortable
+ * Date:	2017-05-24
+ * Version: 1.0
+ * Author:  Engima
+ *
+ * Description:
+ * Interface that makes objects sortable.
+ */
+namespace Sqx.Collections
+{
+	public interface IComparer
+	{
+		// Compares the object with another object of the same type (that implements IComparer).
+		// compareItem (ISortable) - The other item to compare with.
+		// Returns (Scalar): -1 if this object is "less than" the compareItem. 1 if this
+		//   object is "greater than" the compareItem. 0 if they are regarded as equal.
+		method Scalar Compare;
+	};
+};

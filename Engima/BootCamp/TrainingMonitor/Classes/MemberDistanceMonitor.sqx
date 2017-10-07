@@ -7,7 +7,10 @@
  * Description:
  * A training monitor that monitors and calculates a score for a group's combat behavior.
  */
+ 
 call compile preprocessFileLineNumbers "Engima\BootCamp\TrainingMonitor\Classes\MonitorUnit.sqx";
+
+using Sqx.Collections;
  
 namespace Engima.BootCamp.TrainingMonitor
 {
@@ -86,7 +89,7 @@ namespace Engima.BootCamp.TrainingMonitor
 			{
 				_report = _report + _newLine + (call _x.ToString);
 				_newLine = "\n";
-			} foreach _mMonitorUnits as MonitorUnit;
+			} foreach ([_mMonitorUnits] call Sorter.QSort) as MonitorUnit;
 			
 			_report
 		};

@@ -1,3 +1,4 @@
+call compile preprocessFileLineNumbers "Sqx\Collections\Sorter.sqx";
 call compile preprocessFileLineNumbers "Shared\InitShared.sqx";
 
 if (isServer) then {

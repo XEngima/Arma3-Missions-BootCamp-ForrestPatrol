@@ -7,9 +7,12 @@
  * Description:
  * A class that models a unit with given feedback and a relative score.
  */
+ 
+using Sqx.Collections;
+ 
 namespace Engima.BootCamp.TrainingMonitor
 {
-	public class MonitorUnit
+	public class MonitorUnit : IComparer
 	{
 		// Creates a MonitorUnit object.
 		public constructor {
@@ -25,6 +28,20 @@ namespace Engima.BootCamp.TrainingMonitor
 		public property String Feedback { get; private set; };
 		
 		public property Scalar Score { get; set; };
+		
+		public method Scalar Compare {
+			params ["_otherMonitorUnit" as MonitorUnit];
+			private _result = 0;
+			
+			if (_self.Score < _otherMonitorUnit.Score) then {
+				_result = -1;
+			};
+			if (_self.Score > _otherMonitorUnit.Score) then {
+				_result = 1;
+			};
+			
+			_result;
+		};
 		
 		public method ToString {
 			(name _self.Unit) + ", " + _self.Feedback + ", " + (str _self.Score)
