@@ -7,9 +7,10 @@ namespace Mission.Client
 	call BriefingHandler.AddBriefing;
 
 	[] spawn {
-		waitUntil { !isNil "ENG_memberDistanceMonitor" && !isNil "ENG_lifeStateMonitor" };	
+		waitUntil { !isNil "ENG_memberDistanceMonitor" && !isNil "ENG_lifeStateMonitor" && !isNil "ENG_stealthMonitor"};	
 		private _memberDistanceMonitor = ENG_memberDistanceMonitor as MemberDistanceMonitor;
 		private _lifeStateMonitor = ENG_lifeStateMonitor as LifeStateMonitor;
+		private _stealthMonitor = ENG_stealthMonitor as StealthMonitor;
 		
 		sleep 5;
 		
@@ -21,7 +22,10 @@ namespace Mission.Client
 		ctrlSetText [60, "Life State"];
 		ctrlSetText [61, call _lifeStateMonitor.GetReport];
 		
-		private _totalTeamScore = floor ((call _memberDistanceMonitor.GetTeamScore) + (call _lifeStateMonitor.GetTeamScore)) / 2;
+		ctrlSetText [70, "Stealth"];
+		ctrlSetText [71, call _stealthMonitor.GetReport];
+		
+		private _totalTeamScore = floor (((call _memberDistanceMonitor.GetTeamScore) + (call _lifeStateMonitor.GetTeamScore) + (call _stealthMonitor.GetTeamScore)) / 3);
 		
 		ctrlSetText [100, "Total Team Score"];
 		ctrlSetText [101, (str _totalTeamScore) + "/1000"];

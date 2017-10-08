@@ -50,7 +50,7 @@ namespace Engima.BootCamp.TrainingMonitor
 					} foreach units _mGroup as Object;
 					
 					if (_closestMemberDistance > _mMaxDistance) then {
-						[_unit, "Too far from team members", -ceil((_closestMemberDistance - _mMaxDistance) / 5)] call MonitorUnit.AddUnitScore;
+						[_mMonitorUnits, _unit, "Too far from team members", -ceil((_closestMemberDistance - _mMaxDistance) / 5)] call MonitorUnit.AddUnitScore;
 					};
 					
 				} foreach units _mGroup as Object;

@@ -249,7 +249,7 @@ class TechTreeDialog : BaseDialog {
 };
 
 class BriefingDialog : BaseDialog {
-	controls[] = { BaseBackground, Header, TeamDistanceHeader, TeamDistanceText, LifeStateHeader, LifeStateText, TotalHeader, TotalText, BaseCloseButton };
+	controls[] = { BaseBackground, Header, TeamDistanceHeader, TeamDistanceText, LifeStateHeader, LifeStateText, StealthHeader, StealthText, TotalHeader, TotalText, BaseCloseButton };
 	
 	class Header : BaseDialogHeader {
 		idc = 40;
@@ -260,7 +260,7 @@ class BriefingDialog : BaseDialog {
 		idc = 50;
 		text = "Distance between team members";
 		x = 0.05;
-		y = 0.15;
+		y = 0.20;
 		w = 0.9;
 		h = 0.8;
 	};
@@ -269,7 +269,7 @@ class BriefingDialog : BaseDialog {
 		idc = 51;
 		text = "Tutorial text.";
 		x = 0.05;
-		y = 0.20;
+		y = 0.25;
 		w = 0.9;
 		h = 0.8;
 	};
@@ -277,8 +277,8 @@ class BriefingDialog : BaseDialog {
 	class LifeStateHeader : BaseMultilineHeader {
 		idc = 60;
 		text = "Distance between team members";
-		x = 0.5;
-		y = 0.15;
+		x = 0.35;
+		y = 0.20;
 		w = 0.9;
 		h = 0.8;
 	};
@@ -286,8 +286,26 @@ class BriefingDialog : BaseDialog {
 	class LifeStateText : BaseMultilineText {
 		idc = 61;
 		text = "Tutorial text.";
-		x = 0.5;
+		x = 0.35;
+		y = 0.25;
+		w = 0.9;
+		h = 0.8;
+	};
+	
+	class StealthHeader : BaseMultilineHeader {
+		idc = 70;
+		text = "Distance between team members";
+		x = 0.65;
 		y = 0.20;
+		w = 0.9;
+		h = 0.8;
+	};
+	
+	class StealthText : BaseMultilineText {
+		idc = 71;
+		text = "Tutorial text.";
+		x = 0.65;
+		y = 0.25;
 		w = 0.9;
 		h = 0.8;
 	};
@@ -296,7 +314,7 @@ class BriefingDialog : BaseDialog {
 		idc = 100;
 		text = "Total Team Score";
 		x = 0.05;
-		y = 0.45;
+		y = 0.50;
 		w = 0.9;
 		h = 0.8;
 	};
@@ -305,24 +323,8 @@ class BriefingDialog : BaseDialog {
 		idc = 101;
 		text = "Tutorial text.";
 		x = 0.05;
-		y = 0.50;
+		y = 0.55;
 		w = 0.9;
 		h = 0.8;
 	};
-	
-	/*
-	class DontShowThisAgainButton : BaseButton {
-		x = 0.59; y = 0.95;
-		w = 0.2; h = 0.04;
-		text = "Don't show this again";
-		action = "closeDialog 0;";
-	};
-
-	class TurnOffTutorialsButton : BaseButton {
-		x = 0.38; y = 0.95;
-		w = 0.2; h = 0.04;
-		text = "Turn off all guides";
-		action = "closeDialog 0;";
-	};
-	*/
 };

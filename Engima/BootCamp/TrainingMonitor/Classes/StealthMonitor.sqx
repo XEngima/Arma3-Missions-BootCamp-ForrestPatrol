@@ -1,0 +1,115 @@
+/*
+ * Name:	DetectionMonitor
+ * Date:	2017-10-08
+ * Version: 1.0
+ * Author:  Engima
+ *
+ * Description:
+ * A training monitor that monitors and calculates a score for a group's stealth.
+ */
+using Sqx.Collections;
+
+namespace Engima.BootCamp.TrainingMonitor
+{
+	public class StealthMonitor : ITrainingMonitor
+	{
+		private fields ["_mDetectingUnits" as Array, "_mDetectableUnits" as Array, "_mMonitorUnits" as Array, "_mRunning" as Boolean];
+	
+		// Creates a StealthMonitor object.
+		public constructor {
+			params ["_detectingUnits" as Array, "_detectableUnits" as Array];
+			
+			_mDetectingUnits = _detectingUnits;
+			_mDetectableUnits = _detectableUnits;
+			_mMonitorUnits = [];
+			_mRunning = false;
+		};
+		
+		private method Run {
+			private _decreaseScorePerSecond = 10;
+			private _detected = false;
+			private _detectingSide = side (_mDetectableUnits select 0);
+			
+			while { _mRunning } do {
+				private _handeledDetectedUnits = [];
+				
+				{
+					private _detectingUnit = _x;
+					private _nearTargets = _detectingUnit nearTargets 2000;
+		            private _filteredTargets = [];
+		            
+		            {
+		            	private _target = _x select 4;
+		            	if (side _target == _detectingSide) then {
+				            _filteredTargets pushBack _target;
+		            	};
+		            } foreach _nearTargets;
+		            
+		            hint str _filteredTargets;
+					
+					{
+						private _detectableUnit = _x;
+					
+						if ((_detectableUnit in _filteredTargets) && !(_detectableUnit in _handeledDetectedUnits)) then {
+							_detected = true;
+							_handeledDetectedUnits pushBack _detectableUnit;
+							[_mMonitorUnits, _detectableUnit, "Detected", -_decreaseScorePerSecond] call MonitorUnit.AddUnitScore;
+						};
+					} foreach _mDetectableUnits as Object;
+					
+				} foreach _mDetectingUnits as Object;
+				
+				if (_detected) then {
+					if (_decreaseScorePerSecond > 1) then {
+						_decreaseScorePerSecond = _decreaseScorePerSecond - 1;
+					};
+				};
+				
+				sleep 1;
+			};
+		};
+		
+		public method Start {
+			if (!_mRunning) then {
+				_mRunning = true;
+				[] spawn _self.Run;	
+			};
+		};
+		
+		public method Stop {
+			_mRunning = false;
+		};
+		
+		public method String GetReport {
+			private _report = "";
+			private _newLine = "";
+			
+			{
+				_report = _report + _newLine + (call _x.ToString);
+				_newLine = "\n";
+			} foreach ([_mMonitorUnits, false] call Sorter.QSort) as MonitorUnit;
+			
+			_report = _report + _newLine + "Total: " + str (call _self.GetTeamScore) + "/1000";
+			
+			_report
+		};
+		
+		public method Scalar GetTeamScore {
+			private _score = 1000;
+		
+			{
+				_score = _score + _x.Score;
+			} foreach _mMonitorUnits as MonitorUnit;
+			
+			if (_score < 0) then {
+				_score = 0;
+			};
+			
+			_score
+		};
+		
+		public static method String GetBriefingText {
+			"Stealth monitoring. Find the enemy before they find you. To maximize your score, get all of them before they even know what is happening. The longer it takes for you to take them out after they have seen you, the lower your score will be."
+		};
+	};
+};

@@ -35,10 +35,10 @@ namespace Engima.BootCamp.TrainingMonitor
 				_mRunning = false;
 				
 				private _unitsCount = count units _mGroup;
-				private _minusScore = 0;
 				
 				{
 					private _text = "alive";
+					private _minusScore = 0;
 					
 					if (_x getVariable ["ENG_BOOTCAMP_isNeutralized", false]) then {
 						_text = "killed";

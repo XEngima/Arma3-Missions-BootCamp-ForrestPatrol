@@ -28,7 +28,7 @@ namespace Mission.Server
 		};
 		
 		public method Start {
-			private ["_memberDistanceMonitor" as MemberDistanceMonitor, "_lifeStateMonitor" as LifeStateMonitor];
+			private ["_memberDistanceMonitor" as MemberDistanceMonitor, "_lifeStateMonitor" as LifeStateMonitor, "_stealthMonitor" as StealthMonitor];
 			
 			[] spawn _self.MonitorPlayerAliveStatus;
 			
@@ -42,13 +42,15 @@ namespace Mission.Server
 			
 			["Mission has started. Enemy patrol is on the move!"] call dre_fnc_CL_ShowTitleTextAllClients;
 			
+			waitUntil { !isNil "eng_enemyLeader" };
+			
 			_memberDistanceMonitor = [group (allPlayers select 0), 5, 30] new MemberDistanceMonitor;
 			_lifeStateMonitor = [group (allPlayers select 0)] new LifeStateMonitor;
+			_stealthMonitor = [units group eng_enemyLeader, units group (allPlayers select 0)] new StealthMonitor;
 			
 			call _memberDistanceMonitor.Start;
 			call _lifeStateMonitor.Start;
-			
-			waitUntil { !isNil "eng_enemyLeader" };
+			call _stealthMonitor.Start;
 			
 			[] spawn {
 				waitUntil { sleep (random 60); { eng_enemyLeader distance _x < 400 } count allPlayers > 0 };
@@ -58,7 +60,7 @@ namespace Mission.Server
 			};
 			
 			// Wait until either all enemies are dead, or all players are dead
-			waitUntil { sleep 2; !isNil "ENG_missionSuccess" || !isNil "ENG_missionFailure" };
+			waitUntil { sleep 3; !isNil "ENG_missionSuccess" || !isNil "ENG_missionFailure" };
 			
 			if (ENG_missionSuccess) then {
 				["TakeOutEnemyPatrol", "SUCCEEDED"] call ENGTASKS_SetTaskState;
@@ -69,12 +71,15 @@ namespace Mission.Server
 			
 			call _memberDistanceMonitor.Stop;
 			call _lifeStateMonitor.Stop;
+			call _stealthMonitor.Stop;
 			
 			ENG_memberDistanceMonitor = _memberDistanceMonitor;
 			ENG_lifeStateMonitor = _lifeStateMonitor;
+			ENG_stealthMonitor = _stealthMonitor;
 			
 			publicVariable "ENG_memberDistanceMonitor";
 			publicVariable "ENG_lifeStateMonitor";
+			publicVariable "ENG_stealthMonitor";
 		};
 	};
 };
