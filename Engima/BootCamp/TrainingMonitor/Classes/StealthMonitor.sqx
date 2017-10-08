@@ -45,8 +45,6 @@ namespace Engima.BootCamp.TrainingMonitor
 		            	};
 		            } foreach _nearTargets;
 		            
-		            hint str _filteredTargets;
-					
 					{
 						private _detectableUnit = _x;
 					
