@@ -1,0 +1,23 @@
+/*
+ * Name:	Briefing
+ * Date:	2017-10-08
+ * Version: 1.0
+ * Author:  Engima
+ *
+ * Description:
+ * A class that handles all about mission start briefing.
+ */
+using Engima.BootCamp.TrainingMonitor;
+
+namespace Mission.Client
+{
+	public class BriefingHandler
+	{
+		public static method AddBriefing {
+			player createDiaryRecord ["Diary", ["Score Mechanics", (call MemberDistanceMonitor.GetBriefingText) + "<br/><br/>" + (call LifeStateMonitor.GetBriefingText)]];
+			player createDiaryRecord ["Diary", ["Orders", "Engage the enemy team and take out all its members."]];
+			player createDiaryRecord ["Diary", ["Situation", "You start <marker name=""ENG_insertionMarker"">here</marker> and will perform a patrol mission inside the <marker name=""ENG_patrolAreaMarker"">enemy zone</marker>. A training force will be waiting for you, and upon excercise start they will begin some random patrolling. At some point, when distance between you and them is less than 400 meters, you will be notified about their presence, as well as their current position and heading."]];
+			player createDiaryRecord ["Diary", ["Background", "After some time in the military, time has now come to practise some theoritically aquired skills, and refine all moves into a perfect team balance."]];
+		};
+	};
+};

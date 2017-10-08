@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	class ItemIDProvider
 	{
 		nextID=27;
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={13785.404,54.563435,22106.355};
-		dir[]={0.96931201,-0.22993249,0.088470198};
-		up[]={0.22915854,0.97307044,0.020911554};
-		aside[]={0.09089312,-2.1664164e-009,-0.99599278};
+		pos[]={13781.864,57.143623,22104.275};
+		dir[]={0.91920567,-0.26722533,0.28968561};
+		up[]={0.2550301,0.96349227,0.080368318};
+		aside[]={0.3006044,5.0549716e-007,-0.95388871};
 	};
 };
 binarizationWanted=0;
@@ -536,10 +536,11 @@ class Mission
 		class Item6
 		{
 			dataType="Marker";
-			position[]={13790.828,50.714397,22107.352};
-			name="marker_2";
+			position[]={13790.828,0,22107.352};
+			name="ENG_insertionMarker";
 			type="mil_start";
 			id=24;
+			atlOffset=-50.714397;
 		};
 		class Item7
 		{

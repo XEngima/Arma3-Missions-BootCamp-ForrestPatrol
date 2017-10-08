@@ -22,7 +22,7 @@ namespace Mission.Server
 		};
 		
 		private method MonitorPlayerAliveStatus {
-			waitUntil { { _x getVariable ["ENG_BOOTCAMP_isNeutralized", false] } count allPlayers == count allPlayers };
+			waitUntil { { _x getVariable ["ENG_BOOTCAMP_isNeutralized", false] } count units group (allPlayers select 0) == count units group (allPlayers select 0) };
 			ENG_missionFailure = true;
 			publicVariable "ENG_missionFailure";
 		};
@@ -59,6 +59,13 @@ namespace Mission.Server
 			
 			// Wait until either all enemies are dead, or all players are dead
 			waitUntil { sleep 2; !isNil "ENG_missionSuccess" || !isNil "ENG_missionFailure" };
+			
+			if (ENG_missionSuccess) then {
+				["TakeOutEnemyPatrol", "SUCCEEDED"] call ENGTASKS_SetTaskState;
+			}
+			else {
+				["TakeOutEnemyPatrol", "FAILED"] call ENGTASKS_SetTaskState;
+			};
 			
 			call _memberDistanceMonitor.Stop;
 			call _lifeStateMonitor.Stop;

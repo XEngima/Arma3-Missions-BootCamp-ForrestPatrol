@@ -72,5 +72,9 @@ namespace Engima.BootCamp.TrainingMonitor
 			
 			_report
 		};
+		
+		public static method String GetBriefingText {
+			"Life state monitoring. Survive! If anyone dies, your score will suffer."
+		};
 	};
 };

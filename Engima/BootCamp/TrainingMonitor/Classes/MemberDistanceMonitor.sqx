@@ -97,5 +97,9 @@ namespace Engima.BootCamp.TrainingMonitor
 			
 			_score
 		};
+		
+		public static method String GetBriefingText {
+			"Member distance monitoring. Keep a good distance between you and the other team members. Not too close to a team member, and not too far from the closest team member."
+		};
 	};
 };
