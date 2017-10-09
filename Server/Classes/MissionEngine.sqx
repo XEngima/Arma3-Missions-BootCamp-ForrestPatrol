@@ -53,10 +53,23 @@ namespace Mission.Server
 			call _stealthMonitor.Start;
 			
 			[] spawn {
-				waitUntil { sleep (random 60); { eng_enemyLeader distance _x < 400 } count allPlayers > 0 };
-			
-				[getPos eng_enemyLeader, "o_inf", "ColorOpfor"] call Marker.CreateIconMarker as Marker;
-				["Enemy patrol sighted in direction " + str (round ((leader group player) getDir getPos eng_enemyLeader)) + ". Moving in direction " + str (round getDir eng_enemyLeader) + "."] call dre_fnc_CL_ShowTitleTextAllClients;
+				private ["_marker" as Marker];
+				_marker = classNull;
+				
+				while { true } do {
+					waitUntil { sleep (random 60); { eng_enemyLeader distance _x < 400 } count allPlayers > 0 };
+					
+					if (isNull _marker) then {
+						_marker = [getPos eng_enemyLeader, "o_inf", "ColorOpfor"] call Marker.CreateIconMarker as Marker;
+					}
+					else {
+						[getPos eng_enemyLeader] call _marker.SetPosition;
+					};
+					
+					["Enemy patrol sighted in direction " + str (round ((leader group player) getDir getPos eng_enemyLeader)) + ". Moving in direction " + str (round getDir eng_enemyLeader) + "."] call dre_fnc_CL_ShowTitleTextAllClients;
+					
+					waitUntil { sleep 5; { eng_enemyLeader distance _x > 400 } count allPlayers == count allPlayers };
+				};
 			};
 			
 			// Wait until either all enemies are dead, or all players are dead
