@@ -55,7 +55,7 @@ namespace Engima.BootCamp.TrainingMonitor
 			};
 		};
 		
-		public method Scalar GetTeamScore {
+		public method Scalar GetScore {
 			_mTeamScore
 		};
 		

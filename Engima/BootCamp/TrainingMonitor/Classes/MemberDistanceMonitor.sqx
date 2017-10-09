@@ -79,12 +79,12 @@ namespace Engima.BootCamp.TrainingMonitor
 				_newLine = "\n";
 			} foreach ([_mMonitorUnits, false] call Sorter.QSort) as MonitorUnit;
 			
-			_report = _report + _newLine + "Total: " + str (call _self.GetTeamScore) + "/1000";
+			_report = _report + _newLine + "Total: " + str (call _self.GetScore) + "/1000";
 			
 			_report
 		};
 		
-		public method Scalar GetTeamScore {
+		public method Scalar GetScore {
 			private _score = 1000;
 		
 			{

@@ -10,7 +10,7 @@
             <IsSelected>false</IsSelected>
             <SubNodes>
               <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="BriefingHandler.sqx" IsExpanded="false" FileName="Client\Classes\BriefingHandler.sqx">
-                <IsSelected>true</IsSelected>
+                <IsSelected>false</IsSelected>
                 <SubNodes />
               </ProjectNodeViewModel>
             </SubNodes>
@@ -83,7 +83,7 @@
                     <IsSelected>false</IsSelected>
                     <SubNodes>
                       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="ITrainingMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\ITrainingMonitor.sqx">
-                        <IsSelected>false</IsSelected>
+                        <IsSelected>true</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
                       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="LifeStateMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\LifeStateMonitor.sqx">
