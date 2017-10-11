@@ -25,7 +25,11 @@ namespace Mission.Client
 		ctrlSetText [70, "Stealth"];
 		ctrlSetText [71, call _stealthMonitor.GetReport];
 		
-		private _totalTeamScore = floor (((call _memberDistanceMonitor.GetScore) + (call _lifeStateMonitor.GetScore) + (call _stealthMonitor.GetScore)) / 3);
+		private _totalTeamScore = 1000 - (1000 - call _memberDistanceMonitor.GetScore) - (1000 - call _lifeStateMonitor.GetScore) - (1000 - call _stealthMonitor.GetScore);
+		
+		if (_totalTeamScore < 0) then {
+			_totalTeamScore = 0;
+		};
 		
 		ctrlSetText [100, "Total Team Score"];
 		ctrlSetText [101, (str _totalTeamScore) + "/1000"];

@@ -23,8 +23,8 @@ namespace Mission.Server
 		
 		private method MonitorPlayerAliveStatus {
 			waitUntil { { _x getVariable ["ENG_BOOTCAMP_isNeutralized", false] } count units group (allPlayers select 0) == count units group (allPlayers select 0) };
-			ENG_missionFailure = true;
-			publicVariable "ENG_missionFailure";
+			ENG_missionSuccess = false;
+			publicVariable "ENG_missionSuccess";
 		};
 		
 		public method Start {
@@ -73,7 +73,7 @@ namespace Mission.Server
 			};
 			
 			// Wait until either all enemies are dead, or all players are dead
-			waitUntil { sleep 3; !isNil "ENG_missionSuccess" || !isNil "ENG_missionFailure" };
+			waitUntil { sleep 3; !isNil "ENG_missionSuccess" };
 			
 			if (ENG_missionSuccess) then {
 				["TakeOutEnemyPatrol", "SUCCEEDED"] call ENGTASKS_SetTaskState;
