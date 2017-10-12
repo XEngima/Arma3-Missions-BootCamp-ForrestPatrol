@@ -1,6 +1,6 @@
 call compile preprocessFileLineNumbers "Client\Classes\BriefingHandler.sqx";
 
-using Engima.BootCamp.TrainingMonitor;
+using Engima.BootCamp.TrainingMonitors;
 
 namespace Mission.Client
 {

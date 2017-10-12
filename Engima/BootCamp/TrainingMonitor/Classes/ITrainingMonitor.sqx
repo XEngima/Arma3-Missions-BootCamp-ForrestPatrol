@@ -7,7 +7,7 @@
  * Description:
  * An interface for training monitors.
  */
-namespace Engima.BootCamp.TrainingMonitor
+namespace Engima.BootCamp.TrainingMonitors
 {
 	public interface ITrainingMonitor
 	{

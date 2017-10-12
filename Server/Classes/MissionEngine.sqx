@@ -9,7 +9,7 @@
  */
  
 using Sqx.Markers;
-using Engima.BootCamp.TrainingMonitor;
+using Engima.BootCamp.TrainingMonitors;
  
 namespace Mission.Server
 {

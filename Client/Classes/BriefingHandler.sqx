@@ -7,7 +7,7 @@
  * Description:
  * A class that handles all about mission start briefing.
  */
-using Engima.BootCamp.TrainingMonitor;
+using Engima.BootCamp.TrainingMonitors;
 
 namespace Mission.Client
 {

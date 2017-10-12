@@ -12,7 +12,7 @@ call compile preprocessFileLineNumbers "Engima\BootCamp\TrainingMonitor\Classes\
 
 using Sqx.Collections;
  
-namespace Engima.BootCamp.TrainingMonitor
+namespace Engima.BootCamp.TrainingMonitors
 {
 	public class MemberDistanceMonitor : ITrainingMonitor
 	{

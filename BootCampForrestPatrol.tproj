@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectRootNode Name="BootCampForrestPatrol" IsExpanded="true" FileName="">
-    <IsSelected>true</IsSelected>
+    <IsSelected>false</IsSelected>
     <SubNodes>
       <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Client" IsExpanded="true" FileName="Client">
         <IsSelected>false</IsSelected>
@@ -99,7 +99,7 @@
                         <SubNodes />
                       </ProjectNodeViewModel>
                       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="StealthMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\StealthMonitor.sqx">
-                        <IsSelected>false</IsSelected>
+                        <IsSelected>true</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
                     </SubNodes>

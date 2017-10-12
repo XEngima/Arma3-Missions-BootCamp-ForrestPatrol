@@ -10,7 +10,7 @@
  
 using Sqx.Collections;
  
-namespace Engima.BootCamp.TrainingMonitor
+namespace Engima.BootCamp.TrainingMonitors
 {
 	public class MonitorUnit : IComparer
 	{
