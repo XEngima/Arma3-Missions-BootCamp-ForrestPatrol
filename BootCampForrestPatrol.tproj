@@ -86,7 +86,7 @@
                         <IsSelected>false</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="LifeStateMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\LifeStateMonitor.sqx">
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="LifeStateMonitor.sqx" IsExpanded="true" FileName="Engima\BootCamp\TrainingMonitors\Classes\LifeStateMonitor.sqx">
                         <IsSelected>false</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
@@ -99,10 +99,14 @@
                         <SubNodes />
                       </ProjectNodeViewModel>
                       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="StealthMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\StealthMonitor.sqx">
-                        <IsSelected>true</IsSelected>
+                        <IsSelected>false</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
                     </SubNodes>
+                  </ProjectNodeViewModel>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Init.sqx">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes />
                   </ProjectNodeViewModel>
                 </SubNodes>
               </ProjectNodeViewModel>
@@ -219,15 +223,6 @@
           </ProjectNodeViewModel>
         </SubNodes>
       </ProjectNodeViewModel>
-      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Shared" IsExpanded="true" FileName="Shared">
-        <IsSelected>false</IsSelected>
-        <SubNodes>
-          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitShared.sqx" IsExpanded="false" FileName="Shared\InitShared.sqx">
-            <IsSelected>false</IsSelected>
-            <SubNodes />
-          </ProjectNodeViewModel>
-        </SubNodes>
-      </ProjectNodeViewModel>
       <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Sqx" IsExpanded="false" FileName="Sqx">
         <IsSelected>false</IsSelected>
         <SubNodes>
@@ -268,7 +263,7 @@
         <SubNodes />
       </ProjectNodeViewModel>
       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="init.sqf" IsExpanded="false" FileName="init.sqf">
-        <IsSelected>false</IsSelected>
+        <IsSelected>true</IsSelected>
         <SubNodes />
       </ProjectNodeViewModel>
       <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="init.sqx" IsExpanded="false" FileName="init.sqx">

@@ -7,8 +7,6 @@
  * Description:
  * A training monitor that monitors and calculates a score for a group's combat behavior.
  */
- 
-call compile preprocessFileLineNumbers "Engima\BootCamp\TrainingMonitors\Classes\MonitorUnit.sqx";
 
 using Sqx.Collections;
  

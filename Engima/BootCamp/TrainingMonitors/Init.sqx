@@ -1,3 +1,4 @@
+call compile preprocessFileLineNumbers "Engima\BootCamp\TrainingMonitors\Classes\MonitorUnit.sqx";
 call compile preprocessFileLineNumbers "Engima\BootCamp\TrainingMonitors\Classes\MemberDistanceMonitor.sqx";
 call compile preprocessFileLineNumbers "Engima\BootCamp\TrainingMonitors\Classes\LifeStateMonitor.sqx";
 call compile preprocessFileLineNumbers "Engima\BootCamp\TrainingMonitors\Classes\StealthMonitor.sqx";

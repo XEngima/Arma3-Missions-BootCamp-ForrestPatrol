@@ -7,6 +7,7 @@
  * Description:
  * A training monitor that monitors and calculates a score for a group's stealth.
  */
+
 using Sqx.Collections;
 
 namespace Engima.BootCamp.TrainingMonitors
