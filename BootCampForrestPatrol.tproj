@@ -76,29 +76,29 @@
                   </ProjectNodeViewModel>
                 </SubNodes>
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="TrainingMonitor" IsExpanded="true" FileName="Engima\BootCamp\TrainingMonitor">
+              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="TrainingMonitors" IsExpanded="true" FileName="Engima\BootCamp\TrainingMonitors">
                 <IsSelected>false</IsSelected>
                 <SubNodes>
-                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Classes" IsExpanded="true" FileName="Engima\BootCamp\TrainingMonitor\Classes">
+                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Classes" IsExpanded="true" FileName="Engima\BootCamp\TrainingMonitors\Classes">
                     <IsSelected>false</IsSelected>
                     <SubNodes>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="ITrainingMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\ITrainingMonitor.sqx">
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="ITrainingMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\ITrainingMonitor.sqx">
                         <IsSelected>false</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="LifeStateMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\LifeStateMonitor.sqx">
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="LifeStateMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\LifeStateMonitor.sqx">
                         <IsSelected>false</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MemberDistanceMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\MemberDistanceMonitor.sqx">
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MemberDistanceMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\MemberDistanceMonitor.sqx">
                         <IsSelected>false</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MonitorUnit.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\MonitorUnit.sqx">
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MonitorUnit.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\MonitorUnit.sqx">
                         <IsSelected>false</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="StealthMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitor\Classes\StealthMonitor.sqx">
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="StealthMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\StealthMonitor.sqx">
                         <IsSelected>true</IsSelected>
                         <SubNodes />
                       </ProjectNodeViewModel>
