@@ -1,277 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ProjectRootNode Name="BootCampForrestPatrol" IsExpanded="true" FileName="">
-    <IsSelected>false</IsSelected>
+  <ProjectRootNode Name="BootCampForrestPatrol" FileName="">
     <SubNodes>
-      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Client" IsExpanded="true" FileName="Client">
-        <IsSelected>false</IsSelected>
+      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Client" FileName="Client">
         <SubNodes>
-          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Classes" IsExpanded="true" FileName="Client\Classes">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Classes" FileName="Client\Classes">
             <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="BriefingHandler.sqx" IsExpanded="false" FileName="Client\Classes\BriefingHandler.sqx">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="BriefingHandler.sqx" FileName="Client\Classes\BriefingHandler.sqx">
                 <SubNodes />
               </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
-          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitClient.sqx" IsExpanded="false" FileName="Client\InitClient.sqx">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitClient.sqx" FileName="Client\InitClient.sqx">
             <SubNodes />
           </ProjectNodeViewModel>
         </SubNodes>
       </ProjectNodeViewModel>
-      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Description" IsExpanded="true" FileName="Description">
-        <IsSelected>false</IsSelected>
+      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Description" FileName="Description">
         <SubNodes>
-          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Dialog.ext" IsExpanded="false" FileName="Description\Dialog.ext">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Dialog.ext" FileName="Description\Dialog.ext">
             <SubNodes />
           </ProjectNodeViewModel>
         </SubNodes>
       </ProjectNodeViewModel>
-      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Engima" IsExpanded="true" FileName="Engima">
-        <IsSelected>false</IsSelected>
+      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Engima" FileName="Engima">
         <SubNodes>
-          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="BootCamp" IsExpanded="true" FileName="Engima\BootCamp">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="BootCamp" FileName="Engima\BootCamp">
             <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="TrainingAmmo" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="TrainingAmmo" FileName="Engima\BootCamp\TrainingAmmo">
                 <SubNodes>
-                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Client" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Client">
-                    <IsSelected>false</IsSelected>
+                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Client" FileName="Engima\BootCamp\TrainingAmmo\Client">
                     <SubNodes>
-                      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="EventHandlers" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Client\EventHandlers">
-                        <IsSelected>false</IsSelected>
+                      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="EventHandlers" FileName="Engima\BootCamp\TrainingAmmo\Client\EventHandlers">
                         <SubNodes>
-                          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="HandleDamage.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Client\EventHandlers\HandleDamage.sqf">
-                            <IsSelected>false</IsSelected>
+                          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="HandleDamage.sqf" FileName="Engima\BootCamp\TrainingAmmo\Client\EventHandlers\HandleDamage.sqf">
                             <SubNodes />
                           </ProjectNodeViewModel>
                         </SubNodes>
                       </ProjectNodeViewModel>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitClient.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Client\InitClient.sqf">
-                        <IsSelected>false</IsSelected>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitClient.sqf" FileName="Engima\BootCamp\TrainingAmmo\Client\InitClient.sqf">
                         <SubNodes />
                       </ProjectNodeViewModel>
                     </SubNodes>
                   </ProjectNodeViewModel>
-                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="true" FileName="Engima\BootCamp\TrainingAmmo\Server">
-                    <IsSelected>false</IsSelected>
+                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" FileName="Engima\BootCamp\TrainingAmmo\Server">
                     <SubNodes>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitServer.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Server\InitServer.sqf">
-                        <IsSelected>false</IsSelected>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitServer.sqf" FileName="Engima\BootCamp\TrainingAmmo\Server\InitServer.sqf">
                         <SubNodes />
                       </ProjectNodeViewModel>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="UnitsSpawnService.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Server\UnitsSpawnService.sqf">
-                        <IsSelected>false</IsSelected>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="UnitsSpawnService.sqf" FileName="Engima\BootCamp\TrainingAmmo\Server\UnitsSpawnService.sqf">
                         <SubNodes />
                       </ProjectNodeViewModel>
                     </SubNodes>
                   </ProjectNodeViewModel>
-                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqf" IsExpanded="false" FileName="Engima\BootCamp\TrainingAmmo\Init.sqf">
-                    <IsSelected>false</IsSelected>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqf" FileName="Engima\BootCamp\TrainingAmmo\Init.sqf">
                     <SubNodes />
                   </ProjectNodeViewModel>
                 </SubNodes>
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="TrainingMonitors" IsExpanded="true" FileName="Engima\BootCamp\TrainingMonitors">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="TrainingMonitors" FileName="Engima\BootCamp\TrainingMonitors">
                 <SubNodes>
-                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Classes" IsExpanded="true" FileName="Engima\BootCamp\TrainingMonitors\Classes">
-                    <IsSelected>false</IsSelected>
+                  <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Classes" FileName="Engima\BootCamp\TrainingMonitors\Classes">
                     <SubNodes>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="ITrainingMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\ITrainingMonitor.sqx">
-                        <IsSelected>false</IsSelected>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="ITrainingMonitor.sqx" FileName="Engima\BootCamp\TrainingMonitors\Classes\ITrainingMonitor.sqx">
                         <SubNodes />
                       </ProjectNodeViewModel>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="LifeStateMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\LifeStateMonitor.sqx">
-                        <IsSelected>false</IsSelected>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="LifeStateMonitor.sqx" FileName="Engima\BootCamp\TrainingMonitors\Classes\LifeStateMonitor.sqx">
                         <SubNodes />
                       </ProjectNodeViewModel>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MemberDistanceMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\MemberDistanceMonitor.sqx">
-                        <IsSelected>false</IsSelected>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MemberDistanceMonitor.sqx" FileName="Engima\BootCamp\TrainingMonitors\Classes\MemberDistanceMonitor.sqx">
                         <SubNodes />
                       </ProjectNodeViewModel>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MonitorUnit.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\MonitorUnit.sqx">
-                        <IsSelected>false</IsSelected>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MonitorUnit.sqx" FileName="Engima\BootCamp\TrainingMonitors\Classes\MonitorUnit.sqx">
                         <SubNodes />
                       </ProjectNodeViewModel>
-                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="StealthMonitor.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Classes\StealthMonitor.sqx">
-                        <IsSelected>true</IsSelected>
+                      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="StealthMonitor.sqx" FileName="Engima\BootCamp\TrainingMonitors\Classes\StealthMonitor.sqx">
                         <SubNodes />
                       </ProjectNodeViewModel>
                     </SubNodes>
                   </ProjectNodeViewModel>
-                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqx" IsExpanded="false" FileName="Engima\BootCamp\TrainingMonitors\Init.sqx">
-                    <IsSelected>false</IsSelected>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqx" FileName="Engima\BootCamp\TrainingMonitors\Init.sqx">
                     <SubNodes />
                   </ProjectNodeViewModel>
                 </SubNodes>
               </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
-          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="CommonLib" IsExpanded="false" FileName="Engima\CommonLib">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="CommonLib" FileName="Engima\CommonLib">
             <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="CommonLib.sqf" IsExpanded="false" FileName="Engima\CommonLib\CommonLib.sqf">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="CommonLib.sqf" FileName="Engima\CommonLib\CommonLib.sqf">
                 <SubNodes />
               </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
-          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="PatrolledAreas" IsExpanded="false" FileName="Engima\PatrolledAreas">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="PatrolledAreas" FileName="Engima\PatrolledAreas">
             <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="false" FileName="Engima\PatrolledAreas\Server">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" FileName="Engima\PatrolledAreas\Server">
                 <SubNodes>
-                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Functions.sqf" IsExpanded="false" FileName="Engima\PatrolledAreas\Server\Functions.sqf">
-                    <IsSelected>false</IsSelected>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Functions.sqf" FileName="Engima\PatrolledAreas\Server\Functions.sqf">
                     <SubNodes />
                   </ProjectNodeViewModel>
                 </SubNodes>
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="ConfigAndStart.sqf" IsExpanded="false" FileName="Engima\PatrolledAreas\ConfigAndStart.sqf">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="ConfigAndStart.sqf" FileName="Engima\PatrolledAreas\ConfigAndStart.sqf">
                 <SubNodes />
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Documentation.txt" IsExpanded="false" FileName="Engima\PatrolledAreas\Documentation.txt">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Documentation.txt" FileName="Engima\PatrolledAreas\Documentation.txt">
                 <SubNodes />
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="HeadlessClient.sqf" IsExpanded="false" FileName="Engima\PatrolledAreas\HeadlessClient.sqf">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="HeadlessClient.sqf" FileName="Engima\PatrolledAreas\HeadlessClient.sqf">
                 <SubNodes />
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqf" IsExpanded="false" FileName="Engima\PatrolledAreas\Init.sqf">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqf" FileName="Engima\PatrolledAreas\Init.sqf">
                 <SubNodes />
               </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
-          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="SearchPatrol" IsExpanded="false" FileName="Engima\SearchPatrol">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="SearchPatrol" FileName="Engima\SearchPatrol">
             <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="SearchPatrol.sqf" IsExpanded="false" FileName="Engima\SearchPatrol\SearchPatrol.sqf">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="SearchPatrol.sqf" FileName="Engima\SearchPatrol\SearchPatrol.sqf">
                 <SubNodes />
               </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
-          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="SimpleTasks" IsExpanded="false" FileName="Engima\SimpleTasks">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="SimpleTasks" FileName="Engima\SimpleTasks">
             <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Common" IsExpanded="true" FileName="Engima\SimpleTasks\Common">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Common" FileName="Engima\SimpleTasks\Common">
                 <SubNodes>
-                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="EventHandlers.sqf" IsExpanded="false" FileName="Engima\SimpleTasks\Common\EventHandlers.sqf">
-                    <IsSelected>false</IsSelected>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="EventHandlers.sqf" FileName="Engima\SimpleTasks\Common\EventHandlers.sqf">
                     <SubNodes />
                   </ProjectNodeViewModel>
-                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Functions.sqf" IsExpanded="false" FileName="Engima\SimpleTasks\Common\Functions.sqf">
-                    <IsSelected>false</IsSelected>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Functions.sqf" FileName="Engima\SimpleTasks\Common\Functions.sqf">
                     <SubNodes />
                   </ProjectNodeViewModel>
-                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="UserFunctions.sqf" IsExpanded="false" FileName="Engima\SimpleTasks\Common\UserFunctions.sqf">
-                    <IsSelected>false</IsSelected>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="UserFunctions.sqf" FileName="Engima\SimpleTasks\Common\UserFunctions.sqf">
                     <SubNodes />
                   </ProjectNodeViewModel>
                 </SubNodes>
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="true" FileName="Engima\SimpleTasks\Server">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" FileName="Engima\SimpleTasks\Server">
                 <SubNodes>
-                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="EventHandlers.sqf" IsExpanded="false" FileName="Engima\SimpleTasks\Server\EventHandlers.sqf">
-                    <IsSelected>false</IsSelected>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="EventHandlers.sqf" FileName="Engima\SimpleTasks\Server\EventHandlers.sqf">
                     <SubNodes />
                   </ProjectNodeViewModel>
-                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Functions.sqf" IsExpanded="false" FileName="Engima\SimpleTasks\Server\Functions.sqf">
-                    <IsSelected>false</IsSelected>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Functions.sqf" FileName="Engima\SimpleTasks\Server\Functions.sqf">
                     <SubNodes />
                   </ProjectNodeViewModel>
                 </SubNodes>
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Documentation.sqf" IsExpanded="false" FileName="Engima\SimpleTasks\Documentation.sqf">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Documentation.sqf" FileName="Engima\SimpleTasks\Documentation.sqf">
                 <SubNodes />
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqf" IsExpanded="false" FileName="Engima\SimpleTasks\Init.sqf">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Init.sqf" FileName="Engima\SimpleTasks\Init.sqf">
                 <SubNodes />
               </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
         </SubNodes>
       </ProjectNodeViewModel>
-      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" IsExpanded="true" FileName="Server">
-        <IsSelected>false</IsSelected>
+      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Server" FileName="Server">
         <SubNodes>
-          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Classes" IsExpanded="true" FileName="Server\Classes">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Classes" FileName="Server\Classes">
             <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MissionEngine.sqx" IsExpanded="false" FileName="Server\Classes\MissionEngine.sqx">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MissionEngine.sqx" FileName="Server\Classes\MissionEngine.sqx">
                 <SubNodes />
               </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
-          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitServer.sqx" IsExpanded="false" FileName="Server\InitServer.sqx">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="InitServer.sqx" FileName="Server\InitServer.sqx">
             <SubNodes />
           </ProjectNodeViewModel>
         </SubNodes>
       </ProjectNodeViewModel>
-      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Sqx" IsExpanded="true" FileName="Sqx">
-        <IsSelected>false</IsSelected>
+      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Sqx" FileName="Sqx">
         <SubNodes>
-          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Collections" IsExpanded="true" FileName="Sqx\Collections">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Collections" FileName="Sqx\Collections">
             <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="IComparer.sqx" IsExpanded="false" FileName="Sqx\Collections\IComparer.sqx">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="IComparer.sqx" FileName="Sqx\Collections\IComparer.sqx">
                 <SubNodes />
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Sorter.sqx" IsExpanded="false" FileName="Sqx\Collections\Sorter.sqx">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Sorter.sqx" FileName="Sqx\Collections\Sorter.sqx">
                 <SubNodes />
               </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
-          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Markers" IsExpanded="false" FileName="Sqx\Markers">
-            <IsSelected>false</IsSelected>
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Markers" FileName="Sqx\Markers">
             <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="init.sqx" IsExpanded="false" FileName="Sqx\Markers\init.sqx">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="init.sqx" FileName="Sqx\Markers\init.sqx">
                 <SubNodes />
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Marker.sqx" IsExpanded="false" FileName="Sqx\Markers\Marker.sqx">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="Marker.sqx" FileName="Sqx\Markers\Marker.sqx">
                 <SubNodes />
               </ProjectNodeViewModel>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MarkerHelper.sqx" IsExpanded="false" FileName="Sqx\Markers\MarkerHelper.sqx">
-                <IsSelected>false</IsSelected>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MarkerHelper.sqx" FileName="Sqx\Markers\MarkerHelper.sqx">
                 <SubNodes />
               </ProjectNodeViewModel>
             </SubNodes>
           </ProjectNodeViewModel>
         </SubNodes>
       </ProjectNodeViewModel>
-      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="description.ext" IsExpanded="false" FileName="description.ext">
-        <IsSelected>false</IsSelected>
+      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="description.ext" FileName="description.ext">
         <SubNodes />
       </ProjectNodeViewModel>
-      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="init.sqf" IsExpanded="false" FileName="init.sqf">
-        <IsSelected>false</IsSelected>
+      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="init.sqf" FileName="init.sqf">
         <SubNodes />
       </ProjectNodeViewModel>
-      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="init.sqx" IsExpanded="false" FileName="init.sqx">
-        <IsSelected>false</IsSelected>
+      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="init.sqx" FileName="init.sqx">
         <SubNodes />
       </ProjectNodeViewModel>
-      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MissionTasks.sqf" IsExpanded="false" FileName="MissionTasks.sqf">
-        <IsSelected>false</IsSelected>
+      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="MissionTasks.sqf" FileName="MissionTasks.sqf">
         <SubNodes />
       </ProjectNodeViewModel>
     </SubNodes>
