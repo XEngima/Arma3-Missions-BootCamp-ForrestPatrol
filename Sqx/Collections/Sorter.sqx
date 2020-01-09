@@ -14,12 +14,12 @@ namespace Sqx.Collections
 	public class Sorter
 	{
 		// Performs a qsort on the provided array.
-		// _array (Array): The list of items to sort. All items need to be ISortable.
+		// _array (Array): The list of items to sort. All items need to be IComparer.
 		// _ascending (Boolean): Optional. true to order ascending, false to order descending.
 		//   Default value: true.
 		// Returns (Array): The sorted list.
-		public static method Array QSort {
-			params ["_array" as Array, ["_ascending" as Boolean, true]];
+		public static method Array QSort("_array" as Array, ["_ascending" as Boolean, true])
+		{
 			private ["_result" as Array, "_item1" as IComparer, "_item2" as IComparer];
 			
 			if (count _array <= 1) then {
