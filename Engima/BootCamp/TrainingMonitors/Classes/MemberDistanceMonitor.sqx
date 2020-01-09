@@ -17,9 +17,7 @@ namespace Engima.BootCamp.TrainingMonitors
 		private fields ["_mGroup" as Group, "_mMinDistance" as Scalar, "_mMaxDistance" as Scalar, "_mMonitorUnits" as Array, "_mRunning" as Boolean];
 	
 		// Creates a MemberDistanceMonitor object.
-		public constructor {
-			params ["_group" as Group, "_minDistance" as Scalar, "_maxDistance" as Scalar];
-			
+		public constructor("_group" as Group, "_minDistance" as Scalar, "_maxDistance" as Scalar) {
 			_mGroup = _group;
 			_mMinDistance = _minDistance;
 			_mMaxDistance = _maxDistance;
@@ -27,7 +25,8 @@ namespace Engima.BootCamp.TrainingMonitors
 			_mRunning = false;
 		};
 		
-		private method Run {
+		private method Run()
+		{
 			while { _mRunning } do {
 				{
 					private _unit = _x;
@@ -57,18 +56,21 @@ namespace Engima.BootCamp.TrainingMonitors
 			};
 		};
 		
-		public method Start {
+		public method Start()
+		{
 			if (count units _mGroup > 1) then {
 				_mRunning = true;
 				[] spawn _self.Run;	
 			};
 		};
 		
-		public method Stop {
+		public method Stop()
+		{
 			_mRunning = false;
 		};
 		
-		public method String GetReport {
+		public method String GetReport()
+		{
 			private _report = "";
 			private _newLine = "";
 			
@@ -79,10 +81,11 @@ namespace Engima.BootCamp.TrainingMonitors
 			
 			_report = _report + _newLine + "Total: " + str (call _self.GetScore) + "/1000";
 			
-			_report
+			return _report;
 		};
 		
-		public method Scalar GetScore {
+		public method Scalar GetScore()
+		{
 			private _score = 1000;
 		
 			{
@@ -93,11 +96,12 @@ namespace Engima.BootCamp.TrainingMonitors
 				_score = 0;
 			};
 			
-			_score
+			return _score;
 		};
 		
-		public static method String GetBriefingText {
-			"Member distance monitoring. Keep a good distance between you and the other team members. Not too close to a team member, and not too far from the closest team member."
+		public static method String GetBriefingText()
+		{
+			return "Member distance monitoring. Keep a good distance between you and the other team members. Not too close to a team member, and not too far from the closest team member.";
 		};
 	};
 };

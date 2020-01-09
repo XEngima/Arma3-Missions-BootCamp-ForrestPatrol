@@ -15,17 +15,15 @@ namespace Engima.BootCamp.TrainingMonitors
 	public class MonitorUnit : IComparer
 	{
 		// Creates a MonitorUnit object.
-		public constructor {
-			params ["_unit" as Object, "_feedback" as String, "_score" as Scalar];
-			
+		public constructor("_unit" as Object, "_feedback" as String, "_score" as Scalar)
+		{
 			_self.Unit = _unit;
 			_self.Feedback = _feedback;
 			_self.Score = _score;
 		};
 		
-		public static method AddUnitScore {
-			params ["_monitorUnits" as Array, "_unit" as Object, "_feedback" as String, "_score" as Scalar];
-			
+		public static method AddUnitScore("_monitorUnits" as Array, "_unit" as Object, "_feedback" as String, "_score" as Scalar)
+		{
 			scopeName "main";
 			
 			{
@@ -52,9 +50,12 @@ namespace Engima.BootCamp.TrainingMonitors
 		
 		public property Scalar Score { get; set; };
 		
-		public method Scalar Compare {
-			params ["_otherMonitorUnit" as MonitorUnit];
+		public method Scalar Compare("_otherItem" as IComparer)
+		{
+			private ["_otherMonitorUnit" as MonitorUnit];
 			private _result = 0;
+			
+			_otherMonitorUnit = _otherItem as MonitorUnit;
 			
 			if (_self.Score < _otherMonitorUnit.Score) then {
 				_result = -1;
@@ -63,11 +64,12 @@ namespace Engima.BootCamp.TrainingMonitors
 				_result = 1;
 			};
 			
-			_result;
+			return _result;
 		};
 		
-		public method ToString {
-			(name _self.Unit) + ": " + _self.Feedback + ", " + (str _self.Score)
+		public method ToString()
+		{
+			return (name _self.Unit) + ": " + _self.Feedback + ", " + (str _self.Score);
 		};
 	};
 };

@@ -17,20 +17,21 @@ namespace Engima.BootCamp.TrainingMonitors
 		private fields ["_mGroup" as Group, "_mMonitorUnits" as Array, "_mRunning" as Boolean, "_mTeamScore" as Scalar];
 	
 		// Creates a LifeStateMonitor object.
-		public constructor {
-			params ["_group" as Group];
-			
+		public constructor("_group" as Group)
+		{
 			_mGroup = _group;
 			_mMonitorUnits = [];
 			_mRunning = false;
 			_mTeamScore = 1000;
 		};
 		
-		public method Start {
+		public method Start()
+		{
 			_mRunning = true;
 		};
 		
-		public method Stop {
+		public method Stop()
+		{
 			if (_mRunning) then {
 				_mRunning = false;
 				
@@ -55,11 +56,13 @@ namespace Engima.BootCamp.TrainingMonitors
 			};
 		};
 		
-		public method Scalar GetScore {
-			_mTeamScore
+		public method Scalar GetScore()
+		{
+			return _mTeamScore;
 		};
 		
-		public method String GetReport {
+		public method String GetReport()
+		{
 			private _report = "";
 			private _newLine = "";
 			
@@ -70,11 +73,12 @@ namespace Engima.BootCamp.TrainingMonitors
 			
 			_report = _report + _newLine + "Total: " + str _mTeamScore + "/1000";
 			
-			_report
+			return _report;
 		};
 		
-		public static method String GetBriefingText {
-			"Life state monitoring. Survive! If anyone dies, your score will suffer."
+		public static method String GetBriefingText()
+		{
+			return "Life state monitoring. Survive! If anyone dies, your score will suffer.";
 		};
 	};
 };

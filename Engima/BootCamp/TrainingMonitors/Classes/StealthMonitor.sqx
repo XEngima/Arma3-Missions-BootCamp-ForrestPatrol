@@ -17,16 +17,16 @@ namespace Engima.BootCamp.TrainingMonitors
 		private fields ["_mDetectingUnits" as Array, "_mDetectableUnits" as Array, "_mMonitorUnits" as Array, "_mRunning" as Boolean];
 	
 		// Creates a StealthMonitor object.
-		public constructor {
-			params ["_detectingUnits" as Array, "_detectableUnits" as Array];
-			
+		public constructor("_detectingUnits" as Array, "_detectableUnits" as Array)
+		{
 			_mDetectingUnits = _detectingUnits;
 			_mDetectableUnits = _detectableUnits;
 			_mMonitorUnits = [];
 			_mRunning = false;
 		};
 		
-		private method Run {
+		private method Run()
+		{
 			private _decreaseScorePerSecond = 10;
 			private _detected = false;
 			private _detectingSide = side (_mDetectableUnits select 0);
@@ -68,18 +68,21 @@ namespace Engima.BootCamp.TrainingMonitors
 			};
 		};
 		
-		public method Start {
+		public method Start()
+		{
 			if (!_mRunning) then {
 				_mRunning = true;
 				[] spawn _self.Run;	
 			};
 		};
 		
-		public method Stop {
+		public method Stop()
+		{
 			_mRunning = false;
 		};
 		
-		public method String GetReport {
+		public method String GetReport()
+		{
 			private _report = "";
 			private _newLine = "";
 			
@@ -90,10 +93,11 @@ namespace Engima.BootCamp.TrainingMonitors
 			
 			_report = _report + _newLine + "Total: " + str (call _self.GetScore) + "/1000";
 			
-			_report
+			return _report;
 		};
 		
-		public method Scalar GetScore {
+		public method Scalar GetScore()
+		{
 			private _score = 1000;
 		
 			{
@@ -104,11 +108,12 @@ namespace Engima.BootCamp.TrainingMonitors
 				_score = 0;
 			};
 			
-			_score
+			return _score;
 		};
 		
-		public static method String GetBriefingText {
-			"Stealth monitoring. Find the enemy before they find you. To maximize your score, get all of them before they even know what is happening. The longer it takes for you to take them out after they have seen you, the lower your score will be."
+		public static method String GetBriefingText()
+		{
+			return "Stealth monitoring. Find the enemy before they find you. To maximize your score, get all of them before they even know what is happening. The longer it takes for you to take them out after they have seen you, the lower your score will be.";
 		};
 	};
 };

@@ -11,9 +11,9 @@ namespace Engima.BootCamp.TrainingMonitors
 {
 	public interface ITrainingMonitor
 	{
-		method Start;
-		method Stop;
-		method String GetReport;
-		method Scalar GetScore;
+		method Start();
+		method Stop();
+		method String GetReport();
+		method Scalar GetScore();
 	};
 };
